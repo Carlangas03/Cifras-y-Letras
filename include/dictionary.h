@@ -6,5 +6,10 @@
  * @details Almacena las palabras de un fichero de texto y permite iterar sobre ellas
  *
  */
+class Diccionario {
+private:
+public:
+
+}
 
 #endif
