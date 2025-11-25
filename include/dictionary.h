@@ -10,6 +10,6 @@ class Diccionario {
 private:
 public:
 
-}
+};
 
 #endif

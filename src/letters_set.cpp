@@ -27,14 +27,46 @@ ostream& operator<<(ostream& salida, const ConjuntoLetras& conj) {
     return salida;
 }
 
-// istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
-//     string cadena;
-//
-//     getline(entrada,cadena);
-//     Letra letra;
-//     while (cadena.length() > 0) {
-//         entrada >> letra;
-//         conj.letras.insert(letra);
-//     }
-//     return entrada;
-// }
+istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
+    string cadena;
+
+    getline(entrada,cadena);
+    Letra letra;
+    while (cadena.length() > 0) {
+        entrada >> letra;
+        conj.letras.insert(letra);
+    }
+    return entrada;
+}
+
+
+inline ConjuntoLetras::iterator::iterator () {};
+
+inline ConjuntoLetras::iterator::iterator(set<Letra>::iterator iter) : el_iterador(iter){};
+
+bool ConjuntoLetras::iterator::operator!=(const ConjuntoLetras::iterator &iter) {
+    return el_iterador != iter.el_iterador;
+}
+bool ConjuntoLetras::iterator::operator==(const ConjuntoLetras::iterator &iter) {
+    return el_iterador == iter.el_iterador;
+}
+
+Letra ConjuntoLetras::iterator::operator*() {
+    return *el_iterador;
+}
+
+ConjuntoLetras::iterator ConjuntoLetras::iterator::operator++() {
+    return el_iterador++;
+}
+
+ConjuntoLetras::iterator ConjuntoLetras::end() {
+    return letras.end();
+}
+
+ConjuntoLetras::iterator ConjuntoLetras::begin() {
+    return letras.begin();
+}
+
+pair<ConjuntoLetras::iterator,bool> ConjuntoLetras::insert(const Letra &letra) {
+    return letras.insert(letra);
+}

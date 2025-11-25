@@ -8,4 +8,9 @@
  *  permite la extracción de elementos de forma aleatoria sin reemplazamiento
  */
 
+class Bag {
+private:
+
+};
+
 #endif

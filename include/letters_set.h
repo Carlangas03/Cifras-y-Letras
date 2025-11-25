@@ -47,8 +47,26 @@ class ConjuntoLetras {
 private:
     set<Letra> letras;
 public:
+    Letra& operator[](char caracter);
     friend ostream& operator<<(ostream& salida, const ConjuntoLetras& conj);
     friend istream& operator>>(istream& entrada, ConjuntoLetras& conj);
+
+    class iterator {
+    private:
+        set<Letra>::iterator el_iterador;
+    public:
+        iterator();
+        iterator(set<Letra>::iterator iter);
+        bool operator!=(const ConjuntoLetras::iterator &iter);
+        bool operator==(const ConjuntoLetras::iterator &iter);
+        Letra operator*();
+        iterator operator++();
+    };
+    iterator begin();
+    iterator end();
+
+    pair<ConjuntoLetras::iterator,bool> insert(const Letra &letra);
+
 };
 
 
