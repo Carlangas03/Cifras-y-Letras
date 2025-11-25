@@ -6,6 +6,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "dictionary.h"
 #include <set>
 using namespace std;
 
@@ -16,7 +17,7 @@ int main(int argc, char * argv[]) {
         return 0;
     }
     ifstream f(argv[1]);
-    if (!if) {
+    if (!f) {
         cout<<"No puede abrir el fichero"<< argv[1]<<endl;
         return 0;
     }
