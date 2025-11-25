@@ -21,7 +21,7 @@ public:
     * @brief Construye un diccionario vacío.
     **/
     Diccionario();
-    
+
     /**
     * @brief Devuelve el número de palabras en el diccionario
     **/
@@ -39,7 +39,7 @@ public:
     * @param palabra la palabra que se quiere buscar
     * @return true si la palabra está en el diccionario. False en caso contrario
     **/
-    bool Esta(string palabra);
+    bool Esta(const string & palabra);
 
     /**
     * @brief Lee de un flujo de entrada un diccionario
@@ -65,14 +65,14 @@ public:
 
     public:
         iterator ();
-        string operator *();
+        const string & operator*() const;
         iterator & operator ++();
         bool operator ==(const iterator &i);
         bool operator !=(const iterator &i);
         friend class Diccionario;
     };
 
-    iterator begin();
-    iterator end();
+    const iterator begin() const;
+    const iterator end() const;
 };
 #endif
