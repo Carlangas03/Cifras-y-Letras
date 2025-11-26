@@ -2,7 +2,7 @@
 #define __LETTERS_BAG_H__
 
 #include <list>
-#include <letters_set.h>
+#include "letters_set.h"
 
 using namespace std;
 
