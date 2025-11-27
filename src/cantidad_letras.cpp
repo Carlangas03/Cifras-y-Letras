@@ -39,7 +39,7 @@ int main (int argc, char* argv[]) {
             caracteres[(*it)[i]] += 1;
             num_caracteres++;
         }
-        it++;
+        ++it;
     }
 
     map<char,int>::iterator it2 = caracteres.begin();
@@ -49,6 +49,8 @@ int main (int argc, char* argv[]) {
         it2++;
     }
 
+    // Calcular las puntuaciones para cada letra
+    // Obtener un fichero salida.txt con las tres columnas (letra, cantidad, puntuacion)
 
     return 0;
 }

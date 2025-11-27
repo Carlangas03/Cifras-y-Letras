@@ -1,7 +1,17 @@
 #include "letters_bag.h"
 #include <ctime>
+#include <iostream>
 
 BolsaLetras::BolsaLetras() {}
+
+string BolsaLetras::toString() const {
+    string s;
+    for (list<char>::const_iterator it = bolsa_letras.begin(); it != bolsa_letras.end(); ++it ) {
+        s += (*it);
+        s += "\n";
+    }
+    return s;
+}
 
 void BolsaLetras::add(Letra letra) {
     for (int i = 0; i < letra.getCantidad(); i++) {
@@ -10,27 +20,20 @@ void BolsaLetras::add(Letra letra) {
 }
 
 char BolsaLetras::get() {
-    int i = rand() % bolsa_letras.size()-0+1;
+    int i = rand() % bolsa_letras.size();   // números entre 0 y size-1
     list<char>::iterator it = bolsa_letras.begin();
 
-    for (int j = 0; j < i; j++)
+    for (int k = 0; k < i; k++)
         it++;
 
     char caracter = *it;
     bolsa_letras.erase(it);
 
+    return caracter;
 }
 
 int BolsaLetras::size() const{
     return bolsa_letras.size();
-}
-
-string BolsaLetras::toString() const {
-    string s;
-    for (list<char>::iterator it = bolsa_letras.begin(); it != bolsa_letras.end(); it++)
-        s += *it + "\n";
-
-    return s;
 }
 
 ostream& operator<<(ostream& os, const BolsaLetras& b) {
@@ -46,16 +49,14 @@ istream& operator>>(istream& is, BolsaLetras& b) {
     int puntuacion;
 
     // Versión primera, a lo bruto
-    while (getline(is, s)) {
-
-        if (!s.empty()) {
-            is >> caracter;     letra.setCaracter(caracter);
-            is >> cantidad;     letra.setCantidad(cantidad);
-            is >> puntuacion;   letra.setPuntuacion(puntuacion);
-        }
-
+    while (is >> caracter >> cantidad >> puntuacion) {
+        letra.setCaracter(caracter);
+        letra.setCantidad(cantidad);
+        letra.setPuntuacion(puntuacion);
         b.add(letra);
     }
+
+
 
     return is;
 }

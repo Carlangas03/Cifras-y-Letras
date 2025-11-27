@@ -3,11 +3,13 @@
 #include <ctime>
 #include <string>
 #include "bag.h"
+#include "letters_bag.h"
+#include<fstream>
 
 using namespace std;
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
+
   // Inicializamos el generador de números aleatorios
   srand(time(NULL));
 
