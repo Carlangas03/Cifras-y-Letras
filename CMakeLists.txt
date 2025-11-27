@@ -26,18 +26,15 @@ endif()
 
 if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/bolsa.cpp)
   add_executable(bolsa
-    ${BASE_FOLDER}/src/bolsa.cpp
-    ${BASE_FOLDER}/src/letters_bag.cpp
-    ${BASE_FOLDER}/src/letters_set.cpp
-    ${BASE_FOLDER}/src/dictionary.cpp
-          src/cantidad_letras.cpp)
+    ${BASE_FOLDER}/src/bolsa.cpp)
 endif()
 
 if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/bolsa_letras.cpp)
   add_executable(bolsa_letras
     ${BASE_FOLDER}/src/bolsa_letras.cpp
     ${BASE_FOLDER}/src/letters_bag.cpp
-    ${BASE_FOLDER}/src/letters_set.cpp)
+    ${BASE_FOLDER}/src/letters_set.cpp
+          src/test_letters_bag.cpp)
 endif()
 
 if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/cantidad_letras.cpp)

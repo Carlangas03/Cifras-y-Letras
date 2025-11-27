@@ -13,9 +13,6 @@ istream& operator>>(istream& entrada, Letra& letra) {
     return entrada;
 }
 
-
-
-
 ostream& operator<<(ostream& salida, const ConjuntoLetras& conj) {
     salida << "#Letra Cantidad Puntos";
     set<Letra>::iterator it = conj.letras.begin();
@@ -39,10 +36,16 @@ istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
     return entrada;
 }
 
+Letra &ConjuntoLetras::operator[](char caracter) {
+    ConjuntoLetras::iterator it = begin();
+    Letra letra;
+    while (it != end()) {
+        if ((*it).getCaracter() == caracter) letra = *it;
+        it++;
+    }
+    return letra;
+}
 
-inline ConjuntoLetras::iterator::iterator () {};
-
-inline ConjuntoLetras::iterator::iterator(set<Letra>::iterator iter) : el_iterador(iter){};
 
 bool ConjuntoLetras::iterator::operator!=(const ConjuntoLetras::iterator &iter) {
     return el_iterador != iter.el_iterador;
@@ -51,12 +54,14 @@ bool ConjuntoLetras::iterator::operator==(const ConjuntoLetras::iterator &iter) 
     return el_iterador == iter.el_iterador;
 }
 
-Letra ConjuntoLetras::iterator::operator*() {
+Letra& ConjuntoLetras::iterator::operator*() {
+
     return *el_iterador;
 }
 
-ConjuntoLetras::iterator ConjuntoLetras::iterator::operator++() {
-    return el_iterador++;
+ConjuntoLetras::iterator& ConjuntoLetras::iterator::operator++() {
+    el_iterador++;
+    return *this;
 }
 
 ConjuntoLetras::iterator ConjuntoLetras::end() {

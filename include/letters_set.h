@@ -20,6 +20,9 @@ private:
     int puntuacion;     /**< puntuación de la letra */
 
 public:
+    Letra () : cantidad(0), puntuacion(0) {};
+    Letra (char car) : caracter(caracter), cantidad(0), puntuacion(0) {};
+    Letra (char car, int cant, int punt) : caracter(car) , cantidad(cant) , puntuacion(punt) {};
     void setCaracter(char c) { caracter = c; };
     void setCantidad(int c) { cantidad = c; };
     void setPuntuacion (int p) { puntuacion = p; };
@@ -55,12 +58,13 @@ public:
     private:
         set<Letra>::iterator el_iterador;
     public:
-        iterator();
-        iterator(set<Letra>::iterator iter);
+        iterator() {}
+        iterator(set<Letra>::iterator iter) : el_iterador(iter) {};
         bool operator!=(const ConjuntoLetras::iterator &iter);
         bool operator==(const ConjuntoLetras::iterator &iter);
-        Letra operator*();
-        iterator operator++();
+        Letra& operator*();
+        iterator& operator++();
+        iterator& operator=(const ConjuntoLetras::iterator &iter);
     };
     iterator begin();
     iterator end();
