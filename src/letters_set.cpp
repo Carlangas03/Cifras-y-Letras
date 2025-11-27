@@ -13,7 +13,9 @@ istream& operator>>(istream& entrada, Letra& letra) {
     return entrada;
 }
 
-
+bool Letra::operator<(const Letra &l) const {
+    return caracter < l.caracter;
+}
 
 
 ostream& operator<<(ostream& salida, const ConjuntoLetras& conj) {
@@ -27,14 +29,55 @@ ostream& operator<<(ostream& salida, const ConjuntoLetras& conj) {
     return salida;
 }
 
-// istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
-//     string cadena;
-//
-//     getline(entrada,cadena);
-//     Letra letra;
-//     while (cadena.length() > 0) {
-//         entrada >> letra;
-//         conj.letras.insert(letra);
-//     }
-//     return entrada;
-// }
+istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
+    string cadena;
+
+    getline(entrada,cadena);
+    Letra letra;
+
+    while (entrada >> letra) {
+        conj.letras.insert(letra);
+
+    }
+    return entrada;
+}
+
+Letra &ConjuntoLetras::operator[](char caracter) {
+    ConjuntoLetras::iterator it = begin();
+    Letra letra;
+    while (it != end()) {
+        if ((*it).getCaracter() == caracter) letra = *it;
+        ++it;
+    }
+    return letra;
+}
+
+
+bool ConjuntoLetras::iterator::operator!=(const ConjuntoLetras::iterator &iter) {
+    return el_iterador != iter.el_iterador;
+}
+bool ConjuntoLetras::iterator::operator==(const ConjuntoLetras::iterator &iter) {
+    return el_iterador == iter.el_iterador;
+}
+
+Letra& ConjuntoLetras::iterator::operator*() {
+
+    return *el_iterador;
+}
+
+ConjuntoLetras::iterator& ConjuntoLetras::iterator::operator++() {
+    el_iterador++;
+    return *this;
+}
+
+ConjuntoLetras::iterator ConjuntoLetras::end() {
+    return letras.end();
+}
+
+ConjuntoLetras::iterator ConjuntoLetras::begin() {
+    return letras.begin();
+}
+
+pair<ConjuntoLetras::iterator,bool> ConjuntoLetras::insert(const Letra &letra) {
+    return letras.insert(letra);
+}

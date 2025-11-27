@@ -8,4 +8,10 @@
  *  permite la extracción de elementos de forma aleatoria sin reemplazamiento
  */
 
+template<class T>
+class Bag {
+private:
+
+};
+
 #endif
