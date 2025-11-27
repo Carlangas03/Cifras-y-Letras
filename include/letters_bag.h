@@ -18,9 +18,6 @@ private:
     list<char> bolsa_letras;
 
 public:
-
-    string toString() const;
-
     /**
      * @brief Constructor por defecto
      * @details Genera una bolsa vacía
@@ -45,6 +42,13 @@ public:
      * @return Elemento aleatorio
      */
     char get();
+
+    /**
+     * @brief Formatea la bolsa y la transforma en una cadena tipo std::string.
+     * @return Una cadena tipo std::string la bolsa formateada, de forma
+     * que por cada elemento, se imprime una línea.
+     */
+    string toString() const;
 
     /**
      * @brief Sobrecarga del operador <<. Posibilita la salida formateada
