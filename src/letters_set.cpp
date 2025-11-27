@@ -13,6 +13,11 @@ istream& operator>>(istream& entrada, Letra& letra) {
     return entrada;
 }
 
+bool Letra::operator<(const Letra &l) const {
+    return caracter < l.caracter;
+}
+
+
 ostream& operator<<(ostream& salida, const ConjuntoLetras& conj) {
     salida << "#Letra Cantidad Puntos";
     set<Letra>::iterator it = conj.letras.begin();
@@ -29,9 +34,10 @@ istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
 
     getline(entrada,cadena);
     Letra letra;
-    while (cadena.length() > 0) {
-        entrada >> letra;
+
+    while (entrada >> letra) {
         conj.letras.insert(letra);
+
     }
     return entrada;
 }
@@ -41,7 +47,7 @@ Letra &ConjuntoLetras::operator[](char caracter) {
     Letra letra;
     while (it != end()) {
         if ((*it).getCaracter() == caracter) letra = *it;
-        it++;
+        ++it;
     }
     return letra;
 }

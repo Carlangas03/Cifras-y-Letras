@@ -21,7 +21,7 @@ private:
 
 public:
     Letra () : cantidad(0), puntuacion(0) {};
-    Letra (char car) : caracter(caracter), cantidad(0), puntuacion(0) {};
+    Letra (char car) : caracter(car), cantidad(0), puntuacion(0) {};
     Letra (char car, int cant, int punt) : caracter(car) , cantidad(cant) , puntuacion(punt) {};
     void setCaracter(char c) { caracter = c; };
     void setCantidad(int c) { cantidad = c; };
@@ -30,6 +30,8 @@ public:
     char getCaracter() const { return caracter; };
     int getCantidad() const { return cantidad; };
     int getPuntuacion() const { return puntuacion; };
+
+    bool operator<(const Letra& l) const;
 
     friend ostream& operator<<(ostream& salida, const Letra& letra);
     friend istream& operator>>(istream& entrada, Letra& letra);
