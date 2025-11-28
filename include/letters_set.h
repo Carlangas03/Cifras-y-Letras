@@ -65,7 +65,7 @@ public:
         iterator(set<Letra>::iterator iter) : el_iterador(iter) {};
         bool operator!=(const ConjuntoLetras::iterator &iter);
         bool operator==(const ConjuntoLetras::iterator &iter);
-        Letra& operator*();
+        const Letra& operator*() const;
         iterator& operator++();
         iterator& operator=(const ConjuntoLetras::iterator &iter);
     };

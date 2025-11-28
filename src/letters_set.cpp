@@ -65,8 +65,7 @@ bool ConjuntoLetras::iterator::operator==(const ConjuntoLetras::iterator &iter) 
     return el_iterador == iter.el_iterador;
 }
 
-Letra& ConjuntoLetras::iterator::operator*() {
-
+const Letra& ConjuntoLetras::iterator::operator*() const{
     return *el_iterador;
 }
 
