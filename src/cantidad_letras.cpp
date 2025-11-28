@@ -8,6 +8,11 @@
 #include "dictionary.h"
 using namespace std;
 
+int CalcularPuntuacion(double apariciones, double total, int num_letras) {
+    double porcentaje = apariciones / total;
+    return 10 - num_letras*porcentaje;
+}
+
 int main (int argc, char* argv[]) {
     if (argc != 3) {
         cout << "ERROR: Argumentos incorrectos" ;
@@ -45,13 +50,10 @@ int main (int argc, char* argv[]) {
     }
 
     map<char,int>::iterator it2 = caracteres.begin();
-
-
+    cout << num_caracteres << endl;
     while (it2 != caracteres.end()) {
-        letras[(*it2).first].setCantidad(((*it2).second));
-
-        // Calcular las puntuaciones para cada letra
-        letras[(*it2).first].setPuntuacion((*it2).second,num_caracteres);
+        Letra nueva_letra ((*it2).first, (*it2).second,CalcularPuntuacion((*it2).second, num_caracteres, caracteres.size()));
+        letras.insert(nueva_letra);
         it2++;
     }
 
@@ -63,9 +65,7 @@ int main (int argc, char* argv[]) {
     }
 
     // Obtener un fichero salida.txt con las tres columnas (letra, cantidad, puntuacion)
-    salida << "#Letra" << '\t' << "Cantidad" << '\t' << "Puntos" << endl;
     salida << letras;
-
 
     return 0;
 }

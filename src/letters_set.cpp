@@ -5,8 +5,9 @@ void Letra::setPuntuacion(int apariciones, int total) {
     puntuacion = 10 - 10*(apariciones/total);
 };
 
+
 ostream& operator<<(ostream& salida, const Letra& letra) {
-    salida << letra.getCaracter() << '\t' << letra.getCantidad() << '\t' << letra.getPuntuacion();
+    salida << letra.getCaracter() << '\t'<< '\t' << letra.getCantidad() << '\t'<< '\t' << letra.getPuntuacion();
     return salida;
 }
 
@@ -24,11 +25,10 @@ bool Letra::operator<(const Letra &l) const {
 
 
 ostream& operator<<(ostream& salida, const ConjuntoLetras& conj) {
-    salida << "#Letra Cantidad Puntos";
+    salida << "#Letra\tCantidad\tPuntos"<< endl;
     set<Letra>::iterator it = conj.letras.begin();
     while (it != conj.letras.end()) {
-        salida << endl;
-        salida << *it;
+        salida << *it << endl;
         it++;
     }
     return salida;
@@ -58,6 +58,9 @@ Letra &ConjuntoLetras::operator[](char caracter) {
     return letra;
 }
 
+void ConjuntoLetras::insert (const Letra &letra) {
+    letras.insert(letra);
+}
 
 bool ConjuntoLetras::iterator::operator!=(const ConjuntoLetras::iterator &iter) {
     return el_iterador != iter.el_iterador;
@@ -81,8 +84,4 @@ ConjuntoLetras::iterator ConjuntoLetras::end() {
 
 ConjuntoLetras::iterator ConjuntoLetras::begin() {
     return letras.begin();
-}
-
-pair<ConjuntoLetras::iterator,bool> ConjuntoLetras::insert(const Letra &letra) {
-    return letras.insert(letra);
 }

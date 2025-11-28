@@ -21,8 +21,8 @@ private:
 
 public:
     Letra () : cantidad(0), puntuacion(0) {};
-    Letra (char car) : caracter(car), cantidad(0), puntuacion(0) {};
-    Letra (char car, int cant, int punt) : caracter(car) , cantidad(cant) , puntuacion(punt) {};
+    Letra (char car) : caracter(toupper(car)), cantidad(0), puntuacion(0) {};
+    Letra (char car, int cant, int punt) : caracter(toupper(car)) , cantidad(cant) , puntuacion(punt) {};
     void setCaracter(char c) { caracter = c; };
     void setCantidad(int c) { cantidad = c; };
     void setPuntuacion (int p) { puntuacion = p; };
@@ -56,6 +56,7 @@ public:
     Letra& operator[](char caracter);
     friend ostream& operator<<(ostream& salida, const ConjuntoLetras& conj);
     friend istream& operator>>(istream& entrada, ConjuntoLetras& conj);
+    void insert (const Letra &letra);
 
     class iterator {
     private:
@@ -71,8 +72,6 @@ public:
     };
     iterator begin();
     iterator end();
-
-    pair<ConjuntoLetras::iterator,bool> insert(const Letra &letra);
 
 };
 
