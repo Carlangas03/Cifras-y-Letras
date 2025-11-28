@@ -50,8 +50,9 @@ istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
 Letra &ConjuntoLetras::operator[](char caracter) {
     ConjuntoLetras::iterator it = begin();
     Letra letra;
+
     while (it != end()) {
-        if ((*it).getCaracter() == caracter) letra = *it;
+        if ((*it).getCaracter() == caracter) return letra;
         ++it;
     }
     return letra;

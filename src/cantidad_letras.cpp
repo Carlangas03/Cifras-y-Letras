@@ -20,6 +20,7 @@ int main (int argc, char* argv[]) {
         cout << "ERROR: No se ha podido abrir el diccionario.";
         return 1;
     }
+
     // ifstream let (argv[2]);
     // if (!let.is_open()) {
     //     cout << "ERROR: No se ha podido abrir el archivo letras.";
@@ -53,6 +54,7 @@ int main (int argc, char* argv[]) {
         letras[(*it2).first].setPuntuacion((*it2).second,num_caracteres);
         it2++;
     }
+
 
     ofstream salida (argv[2]);
     if (!salida.is_open()) {
