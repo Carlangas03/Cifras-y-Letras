@@ -43,6 +43,7 @@ ostream& operator<<(ostream& os, const BolsaLetras& b) {
 
 istream& operator>>(istream& is, BolsaLetras& b) {
     string s;
+    getline (is, s);
     Letra letra;
     char caracter;
     int cantidad;

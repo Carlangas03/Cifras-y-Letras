@@ -50,7 +50,7 @@ int main (int argc, char* argv[]) {
     }
 
     map<char,int>::iterator it2 = caracteres.begin();
-    cout << num_caracteres << endl;
+
     while (it2 != caracteres.end()) {
         Letra nueva_letra ((*it2).first, (*it2).second,CalcularPuntuacion((*it2).second, num_caracteres, caracteres.size()));
         letras.insert(nueva_letra);
