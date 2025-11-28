@@ -9,7 +9,7 @@
 using namespace std;
 
 int main (int argc, char* argv[]) {
-    if (argc != 4) {
+    if (argc != 3) {
         cout << "ERROR: Argumentos incorrectos" ;
         return 1;
     }
@@ -20,16 +20,16 @@ int main (int argc, char* argv[]) {
         cout << "ERROR: No se ha podido abrir el diccionario.";
         return 1;
     }
-    ifstream let (argv[2]);
-    if (!let.is_open()) {
-        cout << "ERROR: No se ha podido abrir el archivo letras.";
-        return 1;
-    }
+    // ifstream let (argv[2]);
+    // if (!let.is_open()) {
+    //     cout << "ERROR: No se ha podido abrir el archivo letras.";
+    //     return 1;
+    // }
 
     Diccionario diccionario ;
     ConjuntoLetras letras;
     dicc >> diccionario;
-    let >> letras;
+    // let >> letras;
     map<char,int> caracteres;
     Diccionario::iterator it = diccionario.begin();
     int num_caracteres = 0;
@@ -54,7 +54,7 @@ int main (int argc, char* argv[]) {
         it2++;
     }
 
-    ofstream salida (argv[3]);
+    ofstream salida (argv[2]);
     if (!salida.is_open()) {
         cout << "ERROR: No se ha podido abrir el archivo de salida.";
         return 1;
