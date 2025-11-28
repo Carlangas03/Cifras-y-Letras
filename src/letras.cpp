@@ -12,10 +12,9 @@
 #include <ctime>
 using namespace std;
 
-set<string> permutaciones (string cadena, set<string> perm, Diccionario diccionario) {
+void permutaciones (string cadena, set<string> &perm, const Diccionario &diccionario) {
 
-    if (cadena.length() == 0) {return perm;}
-    sort(cadena.begin(), cadena.end());
+    if (cadena.length() == 0) {return ;}
 
     do {
         if (diccionario.Esta(cadena)) perm.insert(cadena);
@@ -25,9 +24,8 @@ set<string> permutaciones (string cadena, set<string> perm, Diccionario dicciona
     for (auto i = 0; i < cadena.size(); i++) {
         string cadena_aux = cadena;
         cadena_aux.erase(i, 1);
-        perm = permutaciones(cadena_aux, perm, diccionario);
+        permutaciones(cadena_aux, perm, diccionario);
     }
-    return perm;
 
 }
 
@@ -38,6 +36,7 @@ int main() {
     BolsaLetras bolsa;
     ifstream entrada ("./data/letras.txt");
     ifstream entrada2 ("./data/diccionario.txt");
+
     entrada2 >> diccionario;
 
     entrada >> bolsa;
@@ -47,10 +46,12 @@ int main() {
         bolsita += bolsa.get();
     }
     cout << bolsita;
+    sort(bolsita.begin(), bolsita.end());
+
 
     set<string> perm;
     //Posibles soluciones
-    perm = permutaciones(bolsita, perm, diccionario);
+    permutaciones(bolsita, perm, diccionario);
 
     set<string>::iterator it = perm.begin();
     for (it ; it != perm.end(); it++) {

@@ -5,7 +5,7 @@ Diccionario::Diccionario() {}
 
 int Diccionario::size() const { return datos.size(); }
 
-bool Diccionario::Esta(const string &palabra) {
+bool Diccionario::Esta(const string &palabra) const {
     if (datos.count(palabra) == 0)
         return false;
     else

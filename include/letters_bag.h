@@ -1,7 +1,7 @@
 #ifndef __LETTERS_BAG_H__
 #define __LETTERS_BAG_H__
 
-#include <list>
+#include <string>
 #include "letters_set.h"
 
 using namespace std;
@@ -15,7 +15,7 @@ using namespace std;
 
 class BolsaLetras {
 private:
-    list<char> bolsa_letras;
+    string bolsa_letras;
 
 public:
     /**

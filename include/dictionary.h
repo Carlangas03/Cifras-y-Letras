@@ -40,7 +40,7 @@ public:
     * @param palabra la palabra que se quiere buscar
     * @return true si la palabra está en el diccionario. False en caso contrario
     **/
-    bool Esta(const string & palabra);
+    bool Esta(const string & palabra) const;
 
     /**
     * @brief Lee de un flujo de entrada un diccionario
