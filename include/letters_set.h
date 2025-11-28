@@ -20,21 +20,98 @@ private:
     int puntuacion;     /**< puntuación de la letra */
 
 public:
+    /**
+     * @brief Constructor sin parámetros
+     * @doc Establece la cantidad a 0 y la puntuación a 0
+     */
     Letra () : cantidad(0), puntuacion(0) {};
-    Letra (char car) : caracter(toupper(car)), cantidad(0), puntuacion(0) {};
-    Letra (char car, int cant, int punt) : caracter(toupper(car)) , cantidad(cant) , puntuacion(punt) {};
-    void setCaracter(char c) { caracter = c; };
-    void setCantidad(int c) { cantidad = c; };
-    void setPuntuacion (int p) { puntuacion = p; };
-    void setPuntuacion (int apariciones , int total);
 
+    /**
+     * @brief Constructor
+     * @param car: caracter que representa la letra
+     * @doc Establece la cantidad y la puntuación a 0
+     */
+    Letra (char car) : caracter(toupper(car)), cantidad(0), puntuacion(0) {};
+
+    /**
+     * @brief Constructor con parámetros
+     * @param car: caracter que representa la letra
+     * @param cant: cantidad de veces que aparece la letra
+     * @param punt: puntuación asociada a la letra
+     */
+    Letra (char car, int cant, int punt) : caracter(toupper(car)) , cantidad(cant) , puntuacion(punt) {};
+
+    /**
+     * @brief Establece el caracter de la letra
+     * @param c: caracter a establecer
+     */
+    void setCaracter(char c) { caracter = c; };
+
+    /**
+     * @brief Establece la cantidad de la letra
+     * @param c: cantidad a establecer
+     */
+    void setCantidad(int c) { cantidad = c; };
+
+    /**
+     * @brief Establece la puntuación de la letra
+     * @param p: puntuación a establecer
+     */
+    void setPuntuacion (int p) { puntuacion = p; };
+
+    /**
+     * @brief Establece la puntuación de la letra
+     * @param apariciones: num veces que aparece una letra en un
+     *                     diccionario
+     * @param total: total de letras de un diccionario
+     * @param num_letras: num letras diferentes de un diccionario
+     * @doc La puntuación estará entre 1 y 10
+     */
+    void setPuntuacion (int apariciones , int total, int num_letras);
+
+    /**
+     * @brief Devuelve el caracter asociado a una letra
+     * @return Caracter asociado a una letra
+     */
     char getCaracter() const { return caracter; };
+
+    /**
+     * @brief Devuelve la cantidad asociada a una letra
+     * @return Cantidad asociada a una letra
+     */
     int getCantidad() const { return cantidad; };
+
+    /**
+     * @brief Devuelve la puntuación asociada a una letra
+     * @return Puntuación asociada a una letra
+     */
     int getPuntuacion() const { return puntuacion; };
 
+    /**
+     * @brief Sobrecarga del operador < para Letra
+     * @param l: letra con la que se compara el objeto implícito
+     * @return true si el objeto implícito es menor que l
+     *         false en otro caso
+     * @doc Una letra L1 es menor que L2 si :
+     *          L1.caracter < L2.caracter
+     */
     bool operator<(const Letra& l) const;
 
+
+    /**
+     * @brief Escribe en un flujo de salida una letra
+     * @param salida flujo de salida
+     * @param letra: el objeto que se escribe.
+     * @return el flujo de salida
+     */
     friend ostream& operator<<(ostream& salida, const Letra& letra);
+
+    /**
+     * @brief Lee de un flujo de entrada una letra
+     * @param entrada flujo de entrada
+     * @param letra: el objeto donde se realiza la lectura.
+     * @return el flujo de entrada
+     */
     friend istream& operator>>(istream& entrada, Letra& letra);
 };
 
@@ -51,11 +128,33 @@ public:
 
 class ConjuntoLetras {
 private:
-    set<Letra> letras;
+    set<Letra> letras;  /**< conjunto de letras */
 public:
+
+
     Letra& operator[](char caracter);
+
+    /**
+    * @brief Escribe en un flujo de salida un conjunto de letras
+    * @param salida flujo de salida
+    * @param letra: el objeto que se escribe.
+    * @return el flujo de salida
+    */
     friend ostream& operator<<(ostream& salida, const ConjuntoLetras& conj);
+
+    /**
+     * @brief Lee de un flujo de entrada un conjunto de letras
+     * @param entrada flujo de entrada
+     * @param letra: el objeto donde se realiza la lectura.
+     * @return el flujo de entrada
+     */
     friend istream& operator>>(istream& entrada, ConjuntoLetras& conj);
+
+    /**
+     * @brief Insertar una letra
+     * @param letra: letra a insertar
+     * @doc letra se inserta de forma ordenada
+     */
     void insert (const Letra &letra);
 
     class iterator {

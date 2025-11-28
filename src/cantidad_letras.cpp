@@ -8,10 +8,7 @@
 #include "dictionary.h"
 using namespace std;
 
-int CalcularPuntuacion(double apariciones, double total, int num_letras) {
-    double porcentaje = apariciones / total;
-    return 10 - num_letras*porcentaje;
-}
+
 
 int main (int argc, char* argv[]) {
     if (argc != 3) {
@@ -52,7 +49,8 @@ int main (int argc, char* argv[]) {
     map<char,int>::iterator it2 = caracteres.begin();
 
     while (it2 != caracteres.end()) {
-        Letra nueva_letra ((*it2).first, (*it2).second,CalcularPuntuacion((*it2).second, num_caracteres, caracteres.size()));
+        Letra nueva_letra ((*it2).first, (*it2).second,0);
+        nueva_letra.setPuntuacion((*it2).second, num_caracteres, caracteres.size());
         letras.insert(nueva_letra);
         it2++;
     }

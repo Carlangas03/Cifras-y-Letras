@@ -1,8 +1,9 @@
 #include "letters_set.h"
 
 
-void Letra::setPuntuacion(int apariciones, int total) {
-    puntuacion = 10 - 10*(apariciones/total);
+void Letra::setPuntuacion(int apariciones, int total, int num_letras) {
+    double porcentaje = apariciones / total;
+    puntuacion = 10 - num_letras*porcentaje;
 };
 
 
