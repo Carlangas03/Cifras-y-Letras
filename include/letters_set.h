@@ -26,6 +26,7 @@ public:
     void setCaracter(char c) { caracter = c; };
     void setCantidad(int c) { cantidad = c; };
     void setPuntuacion (int p) { puntuacion = p; };
+    void setPuntuacion (int apariciones , int total);
 
     char getCaracter() const { return caracter; };
     int getCantidad() const { return cantidad; };

@@ -36,6 +36,7 @@ int main (int argc, char* argv[]) {
 
     while (it != diccionario.end()) {
         for (int i = 0 ; i < (*it).size(); i++) {
+            if (!caracteres.count((*it)[i])) caracteres[(*it)[i]] = 0;
             caracteres[(*it)[i]] += 1;
             num_caracteres++;
         }
@@ -44,13 +45,25 @@ int main (int argc, char* argv[]) {
 
     map<char,int>::iterator it2 = caracteres.begin();
 
+
     while (it2 != caracteres.end()) {
-        letras[(*it2).first].cantidad = (*it2).second;
+        letras[(*it2).first].setCantidad(((*it2).second));
+
+        // Calcular las puntuaciones para cada letra
+        letras[(*it2).first].setPuntuacion((*it2).second,num_caracteres);
         it2++;
     }
 
-    // Calcular las puntuaciones para cada letra
+    ofstream salida (argv[3]);
+    if (!salida.is_open()) {
+        cout << "ERROR: No se ha podido abrir el archivo de salida.";
+        return 1;
+    }
+
     // Obtener un fichero salida.txt con las tres columnas (letra, cantidad, puntuacion)
+    salida << "#Letra" << '\t' << "Cantidad" << '\t' << "Puntos" << endl;
+    salida << letras;
+
 
     return 0;
 }

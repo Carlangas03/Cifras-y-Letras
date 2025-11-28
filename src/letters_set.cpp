@@ -1,5 +1,10 @@
 #include "letters_set.h"
 
+
+void Letra::setPuntuacion(int apariciones, int total) {
+    puntuacion = 10 - 10*(apariciones/total);
+};
+
 ostream& operator<<(ostream& salida, const Letra& letra) {
     salida << letra.getCaracter() << '\t' << letra.getCantidad() << '\t' << letra.getPuntuacion();
     return salida;
