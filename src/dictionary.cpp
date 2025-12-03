@@ -31,8 +31,7 @@ ostream & operator<<(ostream & os, const Diccionario &D) {
 istream & operator>>(istream & is,Diccionario &D) {
     string palabra;
     while (getline(is, palabra))
-        D.datos.insert(palabra);
-
+        D.datos.insert(mayusculas(palabra));
     return is;
 };
 
@@ -67,3 +66,9 @@ const Diccionario::iterator Diccionario::end() const {
     return i;
 }
 
+string mayusculas(string &palabra) {
+    string aux;
+    for (string::iterator it = palabra.begin(); it != palabra.end(); ++it)
+        aux += toupper(*it);
+    return aux;
+}

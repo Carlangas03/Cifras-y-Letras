@@ -76,4 +76,5 @@ public:
     const iterator begin() const;
     const iterator end() const;
 };
+string mayusculas(string &palabra);
 #endif
