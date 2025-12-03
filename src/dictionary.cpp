@@ -67,8 +67,7 @@ const Diccionario::iterator Diccionario::end() const {
 }
 
 string mayusculas(string &palabra) {
-    string aux;
-    for (string::iterator it = palabra.begin(); it != palabra.end(); ++it)
-        aux += toupper(*it);
-    return aux;
+    for (int i = 0 ; i < palabra.length(); i++)
+        palabra[i] = toupper(palabra[i]);
+    return palabra;
 }
