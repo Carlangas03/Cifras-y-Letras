@@ -13,24 +13,13 @@
 #include <ctime>
 using namespace std;
 
-void permutaciones (string cadena, set<string> &perm, const Diccionario &diccionario) {
-
-    if (cadena.length() == 0) {return ;}
-
-    do {
-        if (diccionario.Esta(cadena)) perm.insert(cadena);
-    } while (next_permutation(cadena.begin(),cadena.end()));
-
-
-    for (auto i = 0; i < cadena.size(); i++) {
-        string cadena_aux = cadena;
-        cadena_aux.erase(i, 1);
-        permutaciones(cadena_aux, perm, diccionario);
+void Mayuscula (string &cadena) {
+    for (int i = 0; i < cadena.size(); i++) {
+        cadena[i] = toupper(cadena[i]);
     }
-
 }
 
-int puntuacion(string palabra, const Diccionario & diccionario, ConjuntoLetras conjunto, char modalidad) {
+int puntuacion(string palabra, const Diccionario & diccionario, const ConjuntoLetras &conjunto, char &modalidad) {
 
     int punt = 0;
 
@@ -40,7 +29,8 @@ int puntuacion(string palabra, const Diccionario & diccionario, ConjuntoLetras c
 
         else if (modalidad == 'P') {
             for (int i = 0 ; i < palabra.length(); i++ ) {
-                punt += conjunto[palabra.at(i)].getPuntuacion();
+                Letra letra = conjunto.getLetra(palabra.at(i));
+                punt += letra.getPuntuacion();
             }
         }
 
@@ -49,12 +39,34 @@ int puntuacion(string palabra, const Diccionario & diccionario, ConjuntoLetras c
                  << "con ninguna de las opciones posibles.\n"
                  << "Escriba la modalidad de nuevo [P/L]: ";
             cin >> modalidad;
-            punt = puntuacion(palabra, diccionario, conjunto, toupper(modalidad));
+            modalidad = toupper(modalidad);
+            punt = puntuacion(palabra, diccionario, conjunto, modalidad);
         }
     }
 
     return punt;
 }
+
+
+void permutaciones (string cadena, set<string> &perm, const Diccionario &diccionario ,
+                    const ConjuntoLetras & conj, int punt_min, char modalidad) {
+
+    if (cadena.length() == 0) {return ;}
+
+    do {
+        if (diccionario.Esta(cadena) &&
+            puntuacion (cadena,diccionario,conj,modalidad) >= punt_min) perm.insert(cadena);
+    } while (next_permutation(cadena.begin(),cadena.end()));
+
+
+    for (auto i = 0; i < cadena.size(); i++) {
+        string cadena_aux = cadena;
+        cadena_aux.erase(i, 1);
+        permutaciones(cadena_aux, perm, diccionario, conj, punt_min, modalidad);
+    }
+
+}
+
 
 /**
  * Muestra ayuda para el uso del programa
@@ -83,9 +95,6 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-
-
-
     srand(time(NULL));
 
     // Cargar los datos
@@ -100,9 +109,9 @@ int main(int argc, char *argv[]) {
         throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[1]));
 
     // ifstream entrada_bolsa (argv[2]);
-    ifstream entrada_bolsa (argv[2]);
-    if (!entrada_bolsa)
-        throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[2]));
+    // ifstream entrada_bolsa (argv[2]);
+    // if (!entrada_bolsa)
+    //     throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[2]));
 
 
     int tamanio_bolsa = stoi(argv[3]);
@@ -110,7 +119,12 @@ int main(int argc, char *argv[]) {
 
     // Variables que se van a necesitar en el transcurso del juego
     ConjuntoLetras conjunto;
-    string palabra_usr, mejor_solucion;
+    ifstream entrada_conj (argv[2]);
+    if (!entrada_conj)
+        throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[2]));
+
+    entrada_conj >> conjunto;
+
     //set<string> perm;   -->tiene que ir dentro para no ir acumulando permutaciones
     char c;
 
@@ -121,12 +135,15 @@ int main(int argc, char *argv[]) {
     entrada_dicc.close();
 
     do {
-        //Entrada de la bolsa (dentro del bucle para garantizar que en todas las
-        //iteraciones tenemos todos los caracteres disponibles)
-        entrada_bolsa >> bolsa;         // string del campo 'char' (tantas veces
-                                        // como indica el campo 'int cantidad')
-        entrada_bolsa.close();
+        string palabra_usr, mejor_solucion;
 
+        // //Entrada de la bolsa (dentro del bucle para garantizar que en todas las
+        // //iteraciones tenemos todos los caracteres disponibles)
+        // entrada_bolsa >> bolsa;         // string del campo 'char' (tantas veces
+        //                                 // como indica el campo 'int cantidad')
+        // entrada_bolsa.close();
+        bolsa.cargarBolsa(conjunto);
+        cout << bolsa;
 
         // Generar una bolsa de n caracteres aleatorios de entre la bolsa
         string bolsita;
@@ -139,26 +156,42 @@ int main(int argc, char *argv[]) {
         cout << "Las letras son: " << bolsita << endl;
         cout << "Dime tu solucion: ";
         getline(cin, palabra_usr);
+        Mayuscula(palabra_usr);
         // cin >> palabra_usr;
 
-        int punt_usuario = puntuacion(palabra_usr, diccionario, conjunto, toupper(modalidad));
+        while (!diccionario.Esta(palabra_usr)) {
+            cout << "Su palabra no esta en el diccionario." << endl;
+            cout << "Intentelo de nuevo." << endl;
+            cout << "Dime tu solucion: ";
+            getline(cin, palabra_usr);
+            Mayuscula(palabra_usr);
+        }
+
+        modalidad=toupper(modalidad);
+        int punt_usuario = puntuacion(palabra_usr, diccionario, conjunto, modalidad);
         cout << palabra_usr << " --> Puntuacion: " << punt_usuario << endl;
 
+        set<string> perm;
         // Posibles soluciones
         sort(bolsita.begin(), bolsita.end());
-        set<string> perm;
-        permutaciones(bolsita, perm, diccionario);
+
+        permutaciones(bolsita, perm, diccionario, conjunto,punt_usuario, modalidad);
 
 
         /*********************************************************************/
         cout << endl << "Mis soluciones son: " << endl;
         for (set<string>::iterator it = perm.begin(); it != perm.end(); it++) {
 
-            if ((*it).length() >= punt_usuario) {
-                cout << *it << "\tPuntuacion: " << (*it).length() << endl;
 
-                if ((*it).length() > mejor_solucion.length()) mejor_solucion = *it;
-            }
+            //HAY QUE CAMBIAR PARA MOSTRAR LA PUNTUACION DE
+            cout << *it << "\tPuntuacion: " << (*it).length() << endl;
+
+            //HAY QUE CAMBIAR ESTO
+            //
+            // if ((*it).length() >= punt_usuario) {
+            //
+            //     if ((*it).length() > mejor_solucion.length()) mejor_solucion = *it;
+            // }
         }
         cout << endl << "Mejor solucion: " << mejor_solucion;
         cout << endl << endl;
@@ -169,7 +202,7 @@ int main(int argc, char *argv[]) {
         cin.ignore();
         c = toupper(c);
         while (c != 'S' && c != 'N') {
-            cout << "Caracteres no validos. Escriba de nuevo [S/N]: ";
+            cout << "Caracter no valido. Escriba de nuevo [S/N]: ";
             cin >> c;
             cin.ignore();
             c = toupper(c);

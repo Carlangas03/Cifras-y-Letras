@@ -48,16 +48,13 @@ istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
     return entrada;
 }
 
-Letra& ConjuntoLetras::operator[](char caracter) {
-    ConjuntoLetras::iterator it = begin();
-    Letra letra;
-
-    while (it != end()) {
-        if ((*it).getCaracter() == caracter) return letra;
-        ++it;
-    }
-    return letra;
-}
+// Letra& ConjuntoLetras::operator[](char caracter) {
+//     for (auto it = begin(); it != end(); ++it) {
+//         if ((*it).getCaracter() == caracter)
+//             return *(it);
+//     }
+//     throw std::out_of_range("Caracter no encontrado");
+// }
 
 void ConjuntoLetras::insert (const Letra &letra) {
     letras.insert(letra);
@@ -87,10 +84,43 @@ ConjuntoLetras::iterator ConjuntoLetras::begin() {
     return letras.begin();
 }
 
-// int ConjuntoLetras::getPuntuacion(const string &cadena) {
-//     int puntuacion = 0;
-//
-//     for (int i = 0 ; i < cadena.length(); i++) {
-//         puntuacion += [cadena[i]].getPuntuacion;
-//     }
-// }
+Letra ConjuntoLetras::getLetra(char caracter) const{
+
+    set<Letra>::iterator it = letras.begin();
+    while (it != letras.end()) {
+        if ((*it).getCaracter() == caracter);
+            return (*it);
+    }
+
+    return Letra();
+
+}
+
+
+
+
+
+bool ConjuntoLetras::const_iterator::operator!=(const ConjuntoLetras::const_iterator &iter) {
+    return el_iterador != iter.el_iterador;
+}
+bool ConjuntoLetras::const_iterator::operator==(const ConjuntoLetras::const_iterator &iter) {
+    return el_iterador == iter.el_iterador;
+}
+
+const Letra& ConjuntoLetras::const_iterator::operator*() const{
+    return *el_iterador;
+}
+
+ConjuntoLetras::const_iterator& ConjuntoLetras::const_iterator::operator++() {
+    el_iterador++;
+    return *this;
+}
+
+
+ConjuntoLetras::const_iterator ConjuntoLetras::end() const{
+    return letras.end();
+}
+
+ConjuntoLetras::const_iterator ConjuntoLetras::begin() const{
+    return letras.begin();
+}

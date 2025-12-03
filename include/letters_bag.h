@@ -51,6 +51,12 @@ public:
     string toString() const;
 
     /**
+     * @brief Cargar Bolsa
+     * @param conj : conjunto de letras a partir del cual se crea la bolsa
+     */
+    void cargarBolsa (const ConjuntoLetras &conj) ;
+
+    /**
      * @brief Sobrecarga del operador <<. Posibilita la salida formateada
      * de la bolsa por un flujo, que por defecto es la salida estándar.
      * @param os Flujo de salida. Por defecto, os = cout.

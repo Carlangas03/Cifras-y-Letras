@@ -61,3 +61,14 @@ istream& operator>>(istream& is, BolsaLetras& b) {
 
     return is;
 }
+
+
+void BolsaLetras::cargarBolsa(const ConjuntoLetras &conj) {
+    ConjuntoLetras::const_iterator it = conj.begin();
+
+    while (it != conj.end()) {
+        add(*it);
+        ++it;
+    }
+
+}

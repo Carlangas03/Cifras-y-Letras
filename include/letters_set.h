@@ -130,12 +130,10 @@ class ConjuntoLetras {
 private:
     set<Letra> letras;  /**< conjunto de letras */
 public:
-    /**
-     * @brief
-     * @param caracter
-     * @return
-     */
-    Letra& operator[](char caracter);
+
+    Letra getLetra (char caracter) const;
+
+    // Letra& operator[](char caracter);
 
     /**
     * @brief Escribe en un flujo de salida un conjunto de letras
@@ -160,15 +158,6 @@ public:
      */
     void insert (const Letra &letra);
 
-    // /**
-    //  * @brief Obtener puntuación de una cadena
-    //  * @param cadena : cadena a la que queremos calcular la puntuación
-    //  * @return puntuación de la cadena
-    //  * @doc La puntuación se calcula según las puntuaciones de las letras del
-    //  *      ConjuntoLetras
-    //  */
-    // int getPuntuacion (const string &cadena);
-
     class iterator {
     private:
         set<Letra>::iterator el_iterador;
@@ -181,8 +170,27 @@ public:
         iterator& operator++();
         iterator& operator=(const ConjuntoLetras::iterator &iter);
     };
+
+    class const_iterator {
+    private:
+        set<Letra>::const_iterator el_iterador;
+    public:
+        const_iterator() {}
+        const_iterator(set<Letra>::const_iterator iter) : el_iterador(iter) {};
+        bool operator!=(const ConjuntoLetras::const_iterator &iter);
+        bool operator==(const ConjuntoLetras::const_iterator &iter);
+        const Letra& operator*() const;
+        const_iterator& operator++();
+        const_iterator& operator=(const ConjuntoLetras::const_iterator &iter);
+    };
+
+
+
+
     iterator begin();
     iterator end();
+    const_iterator begin() const;
+    const_iterator end() const;
 
 };
 
