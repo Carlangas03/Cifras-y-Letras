@@ -132,7 +132,7 @@ private:
 public:
 
 
-    Letra& operator[](char caracter);
+    Letra operator[](char caracter);
 
     /**
     * @brief Escribe en un flujo de salida un conjunto de letras

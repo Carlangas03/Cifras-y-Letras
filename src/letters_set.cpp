@@ -48,7 +48,7 @@ istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
     return entrada;
 }
 
-Letra &ConjuntoLetras::operator[](char caracter) {
+Letra ConjuntoLetras::operator[](char caracter) {
     ConjuntoLetras::iterator it = begin();
     Letra letra;
 

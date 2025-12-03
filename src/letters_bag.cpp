@@ -56,9 +56,6 @@ istream& operator>>(istream& is, BolsaLetras& b) {
     // Versión primera, a lo bruto
     while (is >> caracter >> cantidad >> puntuacion) {
         Letra letra (caracter, cantidad, puntuacion);
-        // letra.setCaracter(caracter);
-        // letra.setCantidad(cantidad);
-        // letra.setPuntuacion(puntuacion);
         b.add(letra);
     }
 

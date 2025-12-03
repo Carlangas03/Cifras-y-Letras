@@ -29,16 +29,18 @@ void permutaciones (string cadena, set<string> &perm, const Diccionario &diccion
 
 }
 
-int puntuacion(string palabra_usr, const Diccionario & diccionario, char modalidad) {
+int puntuacion(string palabra, const Diccionario & diccionario, ConjuntoLetras conjunto, char modalidad) {
 
     int punt = 0;
 
-    if (diccionario.Esta(mayusculas(palabra_usr))) {
+    if (diccionario.Esta(mayusculas(palabra))) {
         if (modalidad == 'L')
-            punt = palabra_usr.size();
+            punt = palabra.size();
 
         else if (modalidad == 'P') {
-            // sumar la puntuación de cada letra de la palabra palabra_usr
+            //for (string::iterator it = palabra.begin(); it != palabra.end(); it++ ) {
+            //    punt += conjunto[*it].getCantidad();
+            //}
         }
 
         else {
@@ -46,7 +48,7 @@ int puntuacion(string palabra_usr, const Diccionario & diccionario, char modalid
                  << "con ninguna de las opciones posibles.\n"
                  << "Escriba la modalidad de nuevo [P/L]: ";
             cin >> modalidad;
-            punt = puntuacion(palabra_usr, diccionario, toupper(modalidad));
+            punt = puntuacion(palabra, diccionario, conjunto, toupper(modalidad));
         }
     }
 
@@ -65,13 +67,17 @@ int main(int argc, char *argv[]) {
     char modalidad = *argv[4];
 
     // Variables que se van a necesitar en el transcurso del juego
+    ConjuntoLetras conjunto;
     string palabra_usr, mejor_solucion;
     set<string> perm;
     char c;
 
     /*************************************************************************/
-    entrada_bolsa >> bolsa;
-    entrada_dicc >> diccionario;
+    entrada_bolsa >> bolsa;         // string del campo 'char' (tantas veces
+                                    // como indica el campo 'int cantidad')
+    entrada_dicc >> diccionario;    // set<string> (palabras válidas)
+
+    entrada_bolsa.close(); entrada_dicc.close();
 
     do {
         // Generar una bolsa de n caracteres aleatorios de entre la bolsa
@@ -85,7 +91,7 @@ int main(int argc, char *argv[]) {
         cout << "Las letras son: " << bolsita << endl;
         cout << "Dime tu solucion: "; cin >> palabra_usr;
 
-        int punt_usuario = puntuacion(palabra_usr, diccionario, toupper(modalidad));
+        int punt_usuario = puntuacion(palabra_usr, diccionario, conjunto, toupper(modalidad));
         cout << palabra_usr << " --> Puntuacion: " << punt_usuario << endl;
 
         // Posibles soluciones
@@ -109,7 +115,14 @@ int main(int argc, char *argv[]) {
         // Condición para repetir el juego
         cout << "¿Seguir jugando [S/N]?: ";
         cin >> c;
-    } while (c == 's' || c == 'S');
+        c = toupper(c);
+        while (c != 'S' && c != 'N') {
+            cout << "Caracteres no validos. Escriba de nuevo [S/N]: ";
+            cin >> c;
+            c = toupper(c);
+        }
+
+    } while (c == 'S');
 
     return 0;
 }
