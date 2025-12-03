@@ -1,5 +1,6 @@
 //
-// Created by elena on 28/11/2025.
+// PARA COMPILAR:
+//  g++ -I ./include ./src/dictionary.cpp ./src/letters_bag.cpp ./src/letras.cpp ./src/letters_set.cpp -o letras
 //
 #include "dictionary.h"
 #include <fstream>
@@ -7,7 +8,7 @@
 #include <string>
 #include <algorithm>
 #include <iostream>
-
+#include "letters_set.h"
 #include "letters_bag.h"
 #include <ctime>
 using namespace std;
@@ -38,9 +39,9 @@ int puntuacion(string palabra, const Diccionario & diccionario, ConjuntoLetras c
             punt = palabra.size();
 
         else if (modalidad == 'P') {
-            //for (string::iterator it = palabra.begin(); it != palabra.end(); it++ ) {
-            //    punt += conjunto[*it].getCantidad();
-            //}
+            for (int i = 0 ; i < palabra.length(); i++ ) {
+                punt += conjunto[palabra.at(i)].getPuntuacion();
+            }
         }
 
         else {
@@ -55,31 +56,78 @@ int puntuacion(string palabra, const Diccionario & diccionario, ConjuntoLetras c
     return punt;
 }
 
+/**
+ * Muestra ayuda para el uso del programa
+ * @param salida : flujo de salida en el que se muestra la ayuda
+ */
+void showHelp(ostream &salida) {
+    salida << "ERROR en los parametros de letras." << endl;
+    salida << "Ejecutar con los siguientes parametros: " << endl;
+    salida << '\t' << "./bin/letras [diccionario.txt] [letras.txt] ";
+    salida << "[num. letras] [modalidad]" <<endl;
+    salida << endl;
+    salida << "Parametros:" << endl;
+    salida << '\t' << "[diccionario.txt] : fichero con el diccionario" << endl;
+    salida << '\t' << "[letras.txt] : fichero con las letras" << endl;
+    salida << '\t' << "[num. letras] : numero de letras que se deben generar" ;
+    salida << " de forma aleatoria" << endl;
+    salida << '\t' << "[modalidad] : modalidad de juego" << endl;
+    salida << "\t\t\t\t" << "Longitud: si el parametro es L, se buscara la palabra mas larga" << endl;
+    salida << "\t\t\t\t" << "Puntuacion: si el parametro es P, se buscara la palabra con mas puntuacion" << endl;
+}
+
 int main(int argc, char *argv[]) {
+
+    if (argc != 5) {
+        showHelp(cout);
+        return 1;
+    }
+
+
+
+
     srand(time(NULL));
 
     // Cargar los datos
     Diccionario diccionario;
     BolsaLetras bolsa;
-    ifstream entrada_dicc (argv[1]);
+
+
+    //ifstream entrada_dicc (argv[1]);
+    ifstream entrada_dicc;
+    entrada_dicc.open(argv[1]);
+    if (!entrada_dicc)
+        throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[1]));
+
+    // ifstream entrada_bolsa (argv[2]);
     ifstream entrada_bolsa (argv[2]);
+    if (!entrada_bolsa)
+        throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[2]));
+
+
     int tamanio_bolsa = stoi(argv[3]);
     char modalidad = *argv[4];
 
     // Variables que se van a necesitar en el transcurso del juego
     ConjuntoLetras conjunto;
     string palabra_usr, mejor_solucion;
-    set<string> perm;
+    //set<string> perm;   -->tiene que ir dentro para no ir acumulando permutaciones
     char c;
 
     /*************************************************************************/
-    entrada_bolsa >> bolsa;         // string del campo 'char' (tantas veces
-                                    // como indica el campo 'int cantidad')
+
     entrada_dicc >> diccionario;    // set<string> (palabras válidas)
 
-    entrada_bolsa.close(); entrada_dicc.close();
+    entrada_dicc.close();
 
     do {
+        //Entrada de la bolsa (dentro del bucle para garantizar que en todas las
+        //iteraciones tenemos todos los caracteres disponibles)
+        entrada_bolsa >> bolsa;         // string del campo 'char' (tantas veces
+                                        // como indica el campo 'int cantidad')
+        entrada_bolsa.close();
+
+
         // Generar una bolsa de n caracteres aleatorios de entre la bolsa
         string bolsita;
         for (int i = 0 ; i < tamanio_bolsa ; i++) {
@@ -89,13 +137,16 @@ int main(int argc, char *argv[]) {
         // Parte interactiva: Solución del usuario
         cout << endl;
         cout << "Las letras son: " << bolsita << endl;
-        cout << "Dime tu solucion: "; cin >> palabra_usr;
+        cout << "Dime tu solucion: ";
+        getline(cin, palabra_usr);
+        // cin >> palabra_usr;
 
         int punt_usuario = puntuacion(palabra_usr, diccionario, conjunto, toupper(modalidad));
         cout << palabra_usr << " --> Puntuacion: " << punt_usuario << endl;
 
         // Posibles soluciones
         sort(bolsita.begin(), bolsita.end());
+        set<string> perm;
         permutaciones(bolsita, perm, diccionario);
 
 
@@ -115,10 +166,12 @@ int main(int argc, char *argv[]) {
         // Condición para repetir el juego
         cout << "¿Seguir jugando [S/N]?: ";
         cin >> c;
+        cin.ignore();
         c = toupper(c);
         while (c != 'S' && c != 'N') {
             cout << "Caracteres no validos. Escriba de nuevo [S/N]: ";
             cin >> c;
+            cin.ignore();
             c = toupper(c);
         }
 

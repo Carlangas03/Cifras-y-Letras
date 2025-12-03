@@ -48,7 +48,7 @@ istream& operator>>(istream& entrada, ConjuntoLetras& conj) {
     return entrada;
 }
 
-Letra ConjuntoLetras::operator[](char caracter) {
+Letra& ConjuntoLetras::operator[](char caracter) {
     ConjuntoLetras::iterator it = begin();
     Letra letra;
 
@@ -86,3 +86,11 @@ ConjuntoLetras::iterator ConjuntoLetras::end() {
 ConjuntoLetras::iterator ConjuntoLetras::begin() {
     return letras.begin();
 }
+
+// int ConjuntoLetras::getPuntuacion(const string &cadena) {
+//     int puntuacion = 0;
+//
+//     for (int i = 0 ; i < cadena.length(); i++) {
+//         puntuacion += [cadena[i]].getPuntuacion;
+//     }
+// }

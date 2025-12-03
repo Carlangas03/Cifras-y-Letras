@@ -130,9 +130,12 @@ class ConjuntoLetras {
 private:
     set<Letra> letras;  /**< conjunto de letras */
 public:
-
-
-    Letra operator[](char caracter);
+    /**
+     * @brief
+     * @param caracter
+     * @return
+     */
+    Letra& operator[](char caracter);
 
     /**
     * @brief Escribe en un flujo de salida un conjunto de letras
@@ -156,6 +159,15 @@ public:
      * @doc letra se inserta de forma ordenada
      */
     void insert (const Letra &letra);
+
+    // /**
+    //  * @brief Obtener puntuación de una cadena
+    //  * @param cadena : cadena a la que queremos calcular la puntuación
+    //  * @return puntuación de la cadena
+    //  * @doc La puntuación se calcula según las puntuaciones de las letras del
+    //  *      ConjuntoLetras
+    //  */
+    // int getPuntuacion (const string &cadena);
 
     class iterator {
     private:
