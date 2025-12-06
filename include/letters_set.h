@@ -158,6 +158,11 @@ public:
      */
     void insert (const Letra &letra);
 
+
+    /**
+    * ConjuntoLetras::iterator permite recorrer los elementos del
+    * conjunto de letras en orden ascendente
+    */
     class iterator {
     private:
         set<Letra>::iterator el_iterador;
@@ -171,6 +176,10 @@ public:
         iterator& operator=(const ConjuntoLetras::iterator &iter);
     };
 
+    /**
+    * ConjuntoLetras::const_iterator permite recorrer los elementos del
+    * conjunto de letras en orden ascendente
+    */
     class const_iterator {
     private:
         set<Letra>::const_iterator el_iterador;
@@ -185,11 +194,28 @@ public:
     };
 
 
-
-
+    /**
+     * @brief Inicio del recorrido
+     * @return Posicion de inicio del recorrido
+     */
     iterator begin();
+
+    /**
+     * @brief Final del recorrido
+     * @return Posicion de final del recorrido
+     */
     iterator end();
+
+    /**
+     * @brief Inicio del recorrido
+     * @return Posicion de inicio del recorrido
+     */
     const_iterator begin() const;
+
+    /**
+    * @brief Final del recorrido
+    * @return Posicion de final del recorrido
+    */
     const_iterator end() const;
 
 };

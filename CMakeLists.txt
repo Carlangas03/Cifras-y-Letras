@@ -28,7 +28,8 @@ if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/bolsa.cpp)
   add_executable(bolsa
     ${BASE_FOLDER}/src/bolsa.cpp
           src/letras.cpp
-          src/letters_bag.cpp)
+          src/letters_bag.cpp
+          src/cifras.cpp)
 endif()
 
 if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/bolsa_letras.cpp)
