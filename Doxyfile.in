@@ -1,7 +1,8 @@
 PROJECT_NAME           = "Práctica final - Juego de las Letras"
-OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/doc_doxygen/
-INPUT                  = @CMAKE_SOURCE_DIR@/@BASE_FOLDER@/include @CMAKE_SOURCE_DIR@/@BASE_FOLDER@/src @CMAKE_SOURCE_DIR@/@BASE_FOLDER@/doc
+OUTPUT_DIRECTORY       = ./doc_doxygen/
+INPUT                  = ./include ./src ./doc
 GENERATE_LATEX         = YES
-IMAGE_PATH             = @CMAKE_SOURCE_DIR@/@BASE_FOLDER@/doc
+IMAGE_PATH             = ./doc
 EXTRACT_PRIVATE	       = NO
 GENERATE_HTML          = YES
+USE_MDFILE_AS_MAINPAGE = ./doc/mainpage.dox

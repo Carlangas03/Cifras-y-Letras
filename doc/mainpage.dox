@@ -1,11 +1,60 @@
-/*! \mainpage Título de la página principal
+/*! \mainpage Prefacio
 
 # Introducción
 
-A RELLENAR POR EL ESTUDIANTE
+Este proyecto consiste en el planteamiento, especificación e implementación del juego "Cifras y Letras".
+Está enmarcado dentro del plan de estudios de la asignatura "Estructuras de Datos", del doble grado en Ingeniería Informática y Matemáticas por la Universidad de Granada.
+El objetivo de estos programas es el uso de los contenedores que ofrece la Standard Template Library (STL), así como el manejo de los recursos de programación ofrecidos en las lecciones: uso de clases iteradoras, creación de clases a partir de contenedores de la STL, empleo de la recursividad como solución a ciertos problemas, etc.
+
+En este caso, el proyecto está dividido en dos partes, una para cada juego. De este modo, se tienen los siguientes *sub-juegos*.
+
+## Juego de las cifras
+
+Este juego consiste en averiguar la mejor combinación de números de entre un conjunto dado junto con las cuatro operaciones básicas (a saber, suma, resta, producto, división entera) para obtener un número de 3 cifras dado.
+Los números básicos son {1,2,3,4,5,6,7,8,9,10,25,50,75,100}, de los que se tomarán solamente 6 (con posibilidad de repetición).
+A la hora de hacer los cálculos, solo se podrá tomar cada elemento una sola vez (por lo tanto, se podrán hacer hasta 5 operaciones).
+El programa calcula una combinación de operandos y operaciones y da la solución paso a paso. En este caso, no solicita ninguna entrada por parte del usuario.
+
+## Juego de las letras
+
+Este juego consiste en extraer de un conjunto de letras, la palabra con mayor puntuación posible y que forme parte de un diccionario especificado.
+Esta puntuación se calcula según **dos modalidades de juego**, lo cual se debe expresar con un argumento al ejecutarlo.
+Si la modalidad es **L (longitud)**, la palabra con más puntuación es la más larga. Si la modalidad es **P (puntuación)**, esta se calcula según el número de veces que aparezca cada caracter en el diccionario: a menor apariciones, mayor puntuación (se premia lo infrecuente).
+La **cantidad de letras** de las que se tiene que obtener la palabra es un parámetro que se expresa al ejecutar el programa.
+En este juego, se solicita al usuario que escriba su solución, y luego se dan otras soluciones iguales o mejores.
+Para llevar a cabo este juego, hay que ejecutar un programa previamente que cargue en un objeto de la clase Diccionario las posibles palabras que se pueden considerar válidas y que obtenga las puntuaciones de las letras según su frecuencia.
 
 # Ejecutables
 
-A RELLENAR POR EL ESTUDIANTE
+## Juego de las cifras
+### cifras
+Este programa no necesita de ningún parámetro. Es un juego sencillo, y todo se realiza desde el propio programa y con la salida estándar, sin necesidad de ficheros externos.
+
+<code>```./cifras```</code>
+
+## Juego de las letras
+### cantidad_letras
+Este programa auxiliar carga en un objeto de la clase Diccionario las posibles palabras válidas y obtiene las puntuaciones de las letras según su frecuencia. La ejecución se realiza en terminal de la siguiente manera:
+
+<code>```./cantidad_letras ./doc/diccionario.txt ./doc/letras.txt salida.txt```</code>
+
+* i) <code>```./doc/diccionario.txt```</code>: Corresponde con un fichero en el que aparecen todas las palabras válidas. El formato es una palabra por cada línea. De este fichero se obtendrá un objeto de la clase Diccionario.
+
+* ii) <code>```./doc/letras.txt```</code>:
+
+* iii) <code>```salida.txt```</code>: Fichero de salida. Si no existe, se crea. Corresponde con un fichero del tipo "CantidadLetras", es decir, un fichero con tres columnas: la primera para los caracteres que aparecen, la segunda para la frecuencia absoluta de estos, y la tercera para la puntuación correspondiente. De este fichero se obtendrá en el programa principal un objeto de la clase ConjuntoLetras.
+
+### letras
+Este es el ejecutable principal del juego. Espera el diccionario, el conjunto de letras, la modalidad de juego (L o P) y la cantidad de letras a usar.
+
+<code>```./letras ./doc/diccionario.txt ./doc/letras.txt [L|P] n```</code>
+
+* i) <code>```./doc/diccionario.txt```</code>: Fichero correspondiente a un diccionario.
+
+* ii) <code>```./doc/letras.txt```</code>: Fichero de tipo "CantidadLetras" para obtener un objeto de la clase CantidadLetras (set<Letra>).
+
+* iii) <code>```[L|P]```</code>: Modalidad de juego: L para longitud, P para puntuación.
+
+* iv) <code>```n```</code>: Cantidad de letras que tendrá la bolsa para el juego.
 
 */
