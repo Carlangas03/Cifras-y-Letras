@@ -1,0 +1,59 @@
+\doxysection{dictionary.\+h}
+\hypertarget{dictionary_8h_source}{}\label{dictionary_8h_source}\index{include/dictionary.h@{include/dictionary.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_DICTIONARY\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_DICTIONARY\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDiccionario}{Diccionario}}\{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ set<string>\ datos;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{classDiccionario_aa0a2191ec706b256c35b5229cc197b15}{Diccionario}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDiccionario_a74ea14ecba52288b84ffc6ea1f2fba99}{size}}()\ \textcolor{keyword}{const}\ ;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ vector<string>\ \mbox{\hyperlink{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be}{PalabrasLongitud}}(\textcolor{keywordtype}{int}\ longitud);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDiccionario_a7bc0d2dd7334e4f23e92437caf23eae1}{Esta}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\ palabra)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{friend}\ istream\ \&\ \mbox{\hyperlink{classDiccionario_a3d81648dba4e71402605458cc5d29988}{operator>>}}(istream\ \&\ is,\mbox{\hyperlink{classDiccionario}{Diccionario}}\ \&D);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{friend}\ ostream\ \&\ \mbox{\hyperlink{classDiccionario_aec97923723e79e5c1d2550136424b75a}{operator<<}}(ostream\ \&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDiccionario}{Diccionario}}\ \&D);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}}\{}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ set<string>::iterator\ it;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDiccionario_1_1iterator_a09b6773eef10e4563efa069d3d88f4fc}{iterator}}\ ();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\ \mbox{\hyperlink{classDiccionario_1_1iterator_ab36e5ad0f0517459e5e1ce2e9c4bf96b}{operator*}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}}\ \&\ \mbox{\hyperlink{classDiccionario_1_1iterator_a94988ab91331a66258a208276730bb9c}{operator\ ++}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDiccionario_1_1iterator_a6ab38d0620a196200714ee04291dea55}{operator\ ==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}}\ \&i);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDiccionario_1_1iterator_a5d51cafd201ab15390e991c6aed327ee}{operator\ !=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}}\ \&i);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDiccionario}{Diccionario}};}
+\DoxyCodeLine{00124\ \ \ \ \ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}}\ \mbox{\hyperlink{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54}{begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}}\ \mbox{\hyperlink{classDiccionario_a24f754b8c159402498d6b369a52efee9}{end}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{string}\ mayusculas(\textcolor{keywordtype}{string}\ \&palabra);}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

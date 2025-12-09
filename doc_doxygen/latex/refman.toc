@@ -1,0 +1,85 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Prefacio}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Introducción}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Juego de las cifras}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Juego de las letras}{1}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Ejecutables}{2}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Juego de las cifras}{2}{subsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.1.1}cifras}{2}{subsubsection.1.2.1.1}%
+\contentsline {subsection}{\numberline {1.2.2}Juego de las letras}{2}{subsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.2.1}cantidad\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}letras}{2}{subsubsection.1.2.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2.2}letras}{2}{subsubsection.1.2.2.2}%
+\contentsline {chapter}{\numberline {2}Class Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Class Documentation}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Bolsa\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Letras Class Reference}{7}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Constructor \& Destructor Documentation}{8}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}BolsaLetras()}{8}{subsubsection.4.1.2.1}%
+\contentsline {subsection}{\numberline {4.1.3}Member Function Documentation}{8}{subsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.1}add()}{8}{subsubsection.4.1.3.1}%
+\contentsline {subsubsection}{\numberline {4.1.3.2}cargarBolsa()}{8}{subsubsection.4.1.3.2}%
+\contentsline {subsubsection}{\numberline {4.1.3.3}get()}{8}{subsubsection.4.1.3.3}%
+\contentsline {subsubsection}{\numberline {4.1.3.4}size()}{9}{subsubsection.4.1.3.4}%
+\contentsline {subsubsection}{\numberline {4.1.3.5}toString()}{9}{subsubsection.4.1.3.5}%
+\contentsline {subsection}{\numberline {4.1.4}Friends And Related Symbol Documentation}{9}{subsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {4.1.4.1}operator$<$$<$}{9}{subsubsection.4.1.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.4.2}operator$>$$>$}{10}{subsubsection.4.1.4.2}%
+\contentsline {section}{\numberline {4.2}Conjunto\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Letras Class Reference}{10}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{11}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Member Function Documentation}{11}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}begin()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{11}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}begin()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{11}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}end()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{11}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}end()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{12}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}insert()}{12}{subsubsection.4.2.2.5}%
+\contentsline {subsection}{\numberline {4.2.3}Friends And Related Symbol Documentation}{12}{subsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}operator$<$$<$}{12}{subsubsection.4.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}operator$>$$>$}{12}{subsubsection.4.2.3.2}%
+\contentsline {section}{\numberline {4.3}Conjunto\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Letras\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::const\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}iterator Class Reference}{13}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{13}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Diccionario Class Reference}{13}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{14}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Member Function Documentation}{14}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}begin()}{14}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}end()}{14}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}Esta()}{14}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}PalabrasLongitud()}{15}{subsubsection.4.4.2.4}%
+\contentsline {subsection}{\numberline {4.4.3}Friends And Related Symbol Documentation}{15}{subsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}operator$<$$<$}{15}{subsubsection.4.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}operator$>$$>$}{15}{subsubsection.4.4.3.2}%
+\contentsline {section}{\numberline {4.5}Conjunto\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Letras\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::iterator Class Reference}{17}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{17}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.6}Diccionario\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}::iterator Class Reference}{17}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{18}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Member Function Documentation}{18}{subsection.4.6.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.1}operator"!=()}{18}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {4.6.2.2}operator$\ast $()}{19}{subsubsection.4.6.2.2}%
+\contentsline {subsubsection}{\numberline {4.6.2.3}operator++()}{19}{subsubsection.4.6.2.3}%
+\contentsline {subsubsection}{\numberline {4.6.2.4}operator==()}{19}{subsubsection.4.6.2.4}%
+\contentsline {subsection}{\numberline {4.6.3}Friends And Related Symbol Documentation}{20}{subsection.4.6.3}%
+\contentsline {subsubsection}{\numberline {4.6.3.1}Diccionario}{20}{subsubsection.4.6.3.1}%
+\contentsline {section}{\numberline {4.7}Letra Class Reference}{20}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{21}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Constructor \& Destructor Documentation}{21}{subsection.4.7.2}%
+\contentsline {subsubsection}{\numberline {4.7.2.1}Letra()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{21}{subsubsection.4.7.2.1}%
+\contentsline {subsubsection}{\numberline {4.7.2.2}Letra()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{21}{subsubsection.4.7.2.2}%
+\contentsline {subsection}{\numberline {4.7.3}Member Function Documentation}{21}{subsection.4.7.3}%
+\contentsline {subsubsection}{\numberline {4.7.3.1}getCantidad()}{21}{subsubsection.4.7.3.1}%
+\contentsline {subsubsection}{\numberline {4.7.3.2}getCaracter()}{22}{subsubsection.4.7.3.2}%
+\contentsline {subsubsection}{\numberline {4.7.3.3}getPuntuacion()}{22}{subsubsection.4.7.3.3}%
+\contentsline {subsubsection}{\numberline {4.7.3.4}operator$<$()}{22}{subsubsection.4.7.3.4}%
+\contentsline {subsubsection}{\numberline {4.7.3.5}setCantidad()}{22}{subsubsection.4.7.3.5}%
+\contentsline {subsubsection}{\numberline {4.7.3.6}setCaracter()}{23}{subsubsection.4.7.3.6}%
+\contentsline {subsubsection}{\numberline {4.7.3.7}setPuntuacion()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{23}{subsubsection.4.7.3.7}%
+\contentsline {subsubsection}{\numberline {4.7.3.8}setPuntuacion()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{23}{subsubsection.4.7.3.8}%
+\contentsline {subsection}{\numberline {4.7.4}Friends And Related Symbol Documentation}{23}{subsection.4.7.4}%
+\contentsline {subsubsection}{\numberline {4.7.4.1}operator$<$$<$}{23}{subsubsection.4.7.4.1}%
+\contentsline {subsubsection}{\numberline {4.7.4.2}operator$>$$>$}{24}{subsubsection.4.7.4.2}%
+\contentsline {chapter}{\numberline {5}File Documentation}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}dictionary.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}letters\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}bag.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.5.2}%
+\contentsline {section}{\numberline {5.3}letters\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}set.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{26}{section.5.3}%
+\contentsline {chapter}{Index}{29}{section*.15}%

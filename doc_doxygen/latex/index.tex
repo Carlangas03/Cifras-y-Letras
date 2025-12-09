@@ -1,0 +1,34 @@
+\chapter{Prefacio}
+\hypertarget{index}{}\label{index}\index{Prefacio@{Prefacio}}
+\hypertarget{index_autotoc_md0}{}\doxysection{\texorpdfstring{Introducción}{Introducción}}\label{index_autotoc_md0}
+Este proyecto consiste en el planteamiento, especificación e implementación del juego "{}\+Cifras y Letras"{}. Está enmarcado dentro del plan de estudios de la asignatura "{}\+Estructuras de Datos"{}, del doble grado en Ingeniería Informática y Matemáticas por la Universidad de Granada. El objetivo de estos programas es el uso de los contenedores que ofrece la Standard Template Library (STL), así como el manejo de los recursos de programación ofrecidos en las lecciones\+: uso de clases iteradoras, creación de clases a partir de contenedores de la STL, empleo de la recursividad como solución a ciertos problemas, etc.
+
+En este caso, el proyecto está dividido en dos partes, una para cada juego. De este modo, se tienen los siguientes {\itshape sub-\/juegos}.\hypertarget{index_autotoc_md1}{}\doxysubsection{\texorpdfstring{Juego de las cifras}{Juego de las cifras}}\label{index_autotoc_md1}
+Este juego consiste en averiguar la mejor combinación de números de entre un conjunto dado junto con las cuatro operaciones básicas (a saber, suma, resta, producto, división entera) para obtener un número de 3 cifras dado. Los números básicos son \{1,2,3,4,5,6,7,8,9,10,25,50,75,100\}, de los que se tomarán solamente 6 (con posibilidad de repetición). A la hora de hacer los cálculos, solo se podrá tomar cada elemento una sola vez (por lo tanto, se podrán hacer hasta 5 operaciones). El programa calcula una combinación de operandos y operaciones y da la solución paso a paso. En este caso, no solicita ninguna entrada por parte del usuario.\hypertarget{index_autotoc_md2}{}\doxysubsection{\texorpdfstring{Juego de las letras}{Juego de las letras}}\label{index_autotoc_md2}
+Este juego consiste en extraer de un conjunto de letras, la palabra con mayor puntuación posible y que forme parte de un diccionario especificado. Esta puntuación se calcula según {\bfseries{dos modalidades de juego}}, lo cual se debe expresar con un argumento al ejecutarlo. Si la modalidad es {\bfseries{L (longitud)}}, la palabra con más puntuación es la más larga. Si la modalidad es {\bfseries{P (puntuación)}}, esta se calcula según el número de veces que aparezca cada caracter en el diccionario\+: a menor apariciones, mayor puntuación (se premia lo infrecuente). La {\bfseries{cantidad de letras}} de las que se tiene que obtener la palabra es un parámetro que se expresa al ejecutar el programa. En este juego, se solicita al usuario que escriba su solución, y luego se dan otras soluciones iguales o mejores. Para llevar a cabo este juego, hay que ejecutar un programa previamente que cargue en un objeto de la clase \doxylink{classDiccionario}{Diccionario} las posibles palabras que se pueden considerar válidas y que obtenga las puntuaciones de las letras según su frecuencia.\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Ejecutables}{Ejecutables}}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsection{\texorpdfstring{Juego de las cifras}{Juego de las cifras}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsubsection{\texorpdfstring{cifras}{cifras}}\label{index_autotoc_md5}
+Este programa no necesita de ningún parámetro. Es un juego sencillo, y todo se realiza desde el propio programa y con la salida estándar, sin necesidad de ficheros externos.
+
+{\ttfamily {\ttfamily ./cifras}}\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Juego de las letras}{Juego de las letras}}\label{index_autotoc_md6}
+\hypertarget{index_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{cantidad\+\_\+letras}{cantidad\_letras}}\label{index_autotoc_md7}
+Este programa auxiliar carga en un objeto de la clase \doxylink{classDiccionario}{Diccionario} las posibles palabras válidas y obtiene las puntuaciones de las letras según su frecuencia. La ejecución se realiza en terminal de la siguiente manera\+:
+
+{\ttfamily {\ttfamily ./cantidad\+\_\+letras ./doc/diccionario.txt ./doc/letras.txt salida.\+txt}}
+
+i) {\ttfamily {\ttfamily ./doc/diccionario.txt}}\+: Corresponde con un fichero en el que aparecen todas las palabras válidas. El formato es una palabra por cada línea. De este fichero se obtendrá un objeto de la clase \doxylink{classDiccionario}{Diccionario}.
+
+ii) {\ttfamily {\ttfamily ./doc/letras.txt}}\+:
+
+iii) {\ttfamily {\ttfamily salida.\+txt}}\+: Fichero de salida. Si no existe, se crea. Corresponde con un fichero del tipo "{}\+Cantidad\+Letras"{}, es decir, un fichero con tres columnas\+: la primera para los caracteres que aparecen, la segunda para la frecuencia absoluta de estos, y la tercera para la puntuación correspondiente. De este fichero se obtendrá en el programa principal un objeto de la clase \doxylink{classConjuntoLetras}{Conjunto\+Letras}.\hypertarget{index_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{letras}{letras}}\label{index_autotoc_md8}
+Este es el ejecutable principal del juego. Espera el diccionario, el conjunto de letras, la modalidad de juego (L o P) y la cantidad de letras a usar.
+
+{\ttfamily {\ttfamily ./letras ./doc/diccionario.txt ./doc/letras.txt \mbox{[}L\texorpdfstring{$\vert$}{|}P\mbox{]} n}}
+
+i) {\ttfamily {\ttfamily ./doc/diccionario.txt}}\+: Fichero correspondiente a un diccionario.
+
+ii) {\ttfamily {\ttfamily ./doc/letras.txt}}\+: Fichero de tipo "{}\+Cantidad\+Letras"{} para obtener un objeto de la clase Cantidad\+Letras (set$<$\+Letra$>$).
+
+iii) {\ttfamily {\ttfamily \mbox{[}L\texorpdfstring{$\vert$}{|}P\mbox{]}}}\+: Modalidad de juego\+: L para longitud, P para puntuación.
+
+iv) {\ttfamily {\ttfamily n}}\+: Cantidad de letras que tendrá la bolsa para el juego. 

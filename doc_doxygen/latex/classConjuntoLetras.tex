@@ -1,0 +1,165 @@
+\doxysection{Conjunto\+Letras Class Reference}
+\hypertarget{classConjuntoLetras}{}\label{classConjuntoLetras}\index{ConjuntoLetras@{ConjuntoLetras}}
+
+
+TDA \doxylink{classConjuntoLetras}{Conjunto\+Letras}.  
+
+
+
+
+{\ttfamily \#include $<$letters\+\_\+set.\+h$>$}
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classConjuntoLetras_1_1const__iterator}{const\+\_\+iterator}}
+\item 
+class \mbox{\hyperlink{classConjuntoLetras_1_1iterator}{iterator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classConjuntoLetras_abe6ccb2681ab82efe37567ec847a9204}\label{classConjuntoLetras_abe6ccb2681ab82efe37567ec847a9204} 
+\mbox{\hyperlink{classLetra}{Letra}} {\bfseries get\+Letra} (char caracter) const
+\item 
+void \mbox{\hyperlink{classConjuntoLetras_a557051776d6af9ea93d8a5a5a93d4e37}{insert}} (const \mbox{\hyperlink{classLetra}{Letra}} \&letra)
+\begin{DoxyCompactList}\small\item\em Insertar una letra. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConjuntoLetras_1_1iterator}{iterator}} \mbox{\hyperlink{classConjuntoLetras_af9c9876356b57b2a25a367d319e04e0f}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Inicio del recorrido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConjuntoLetras_1_1iterator}{iterator}} \mbox{\hyperlink{classConjuntoLetras_aadbee84222b25e8375ac2f711e2d944a}{end}} ()
+\begin{DoxyCompactList}\small\item\em Final del recorrido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConjuntoLetras_1_1const__iterator}{const\+\_\+iterator}} \mbox{\hyperlink{classConjuntoLetras_a3bccff30dec01bcd508e49be4cb9145c}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Inicio del recorrido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConjuntoLetras_1_1const__iterator}{const\+\_\+iterator}} \mbox{\hyperlink{classConjuntoLetras_a019376d3542049d68e5fa8049593cba5}{end}} () const
+\begin{DoxyCompactList}\small\item\em Final del recorrido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{classConjuntoLetras_a5cdbf25018e302cbdda4e9b47d1b89a4}{operator$<$$<$}} (ostream \&salida, const \mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&conj)
+\begin{DoxyCompactList}\small\item\em Escribe en un flujo de salida un conjunto de letras. \end{DoxyCompactList}\item 
+istream \& \mbox{\hyperlink{classConjuntoLetras_a2c81829649bc02b17d94678df1f059df}{operator$>$$>$}} (istream \&entrada, \mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&conj)
+\begin{DoxyCompactList}\small\item\em Lee de un flujo de entrada un conjunto de letras. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TDA \doxylink{classConjuntoLetras}{Conjunto\+Letras}. 
+
+Este TDA representa un conjunto de letras, con la información necesaria para jugar una partida al juego de las letras, es decir, el número de repeticiones que tenemos de la letra y la puntuación que dicha letra otorga cuando se utiliza en una palabra 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classConjuntoLetras_af9c9876356b57b2a25a367d319e04e0f}\label{classConjuntoLetras_af9c9876356b57b2a25a367d319e04e0f} 
+\index{ConjuntoLetras@{ConjuntoLetras}!begin@{begin}}
+\index{begin@{begin}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classConjuntoLetras_1_1iterator}{Conjunto\+Letras\+::iterator}} Conjunto\+Letras\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicio del recorrido. 
+
+\begin{DoxyReturn}{Returns}
+Posicion de inicio del recorrido 
+\end{DoxyReturn}
+\Hypertarget{classConjuntoLetras_a3bccff30dec01bcd508e49be4cb9145c}\label{classConjuntoLetras_a3bccff30dec01bcd508e49be4cb9145c} 
+\index{ConjuntoLetras@{ConjuntoLetras}!begin@{begin}}
+\index{begin@{begin}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classConjuntoLetras_1_1const__iterator}{Conjunto\+Letras\+::const\+\_\+iterator}} Conjunto\+Letras\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Inicio del recorrido. 
+
+\begin{DoxyReturn}{Returns}
+Posicion de inicio del recorrido 
+\end{DoxyReturn}
+\Hypertarget{classConjuntoLetras_aadbee84222b25e8375ac2f711e2d944a}\label{classConjuntoLetras_aadbee84222b25e8375ac2f711e2d944a} 
+\index{ConjuntoLetras@{ConjuntoLetras}!end@{end}}
+\index{end@{end}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classConjuntoLetras_1_1iterator}{Conjunto\+Letras\+::iterator}} Conjunto\+Letras\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Final del recorrido. 
+
+\begin{DoxyReturn}{Returns}
+Posicion de final del recorrido 
+\end{DoxyReturn}
+\Hypertarget{classConjuntoLetras_a019376d3542049d68e5fa8049593cba5}\label{classConjuntoLetras_a019376d3542049d68e5fa8049593cba5} 
+\index{ConjuntoLetras@{ConjuntoLetras}!end@{end}}
+\index{end@{end}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classConjuntoLetras_1_1const__iterator}{Conjunto\+Letras\+::const\+\_\+iterator}} Conjunto\+Letras\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Final del recorrido. 
+
+\begin{DoxyReturn}{Returns}
+Posicion de final del recorrido 
+\end{DoxyReturn}
+\Hypertarget{classConjuntoLetras_a557051776d6af9ea93d8a5a5a93d4e37}\label{classConjuntoLetras_a557051776d6af9ea93d8a5a5a93d4e37} 
+\index{ConjuntoLetras@{ConjuntoLetras}!insert@{insert}}
+\index{insert@{insert}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Conjunto\+Letras\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLetra}{Letra}} \&}]{letra }\end{DoxyParamCaption})}
+
+
+
+Insertar una letra. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em letra} & letra a insertar @doc letra se inserta de forma ordenada \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classConjuntoLetras_a5cdbf25018e302cbdda4e9b47d1b89a4}\label{classConjuntoLetras_a5cdbf25018e302cbdda4e9b47d1b89a4} 
+\index{ConjuntoLetras@{ConjuntoLetras}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{salida,  }\item[{const \mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&}]{conj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Escribe en un flujo de salida un conjunto de letras. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em salida} & flujo de salida \\
+\hline
+{\em letra} & el objeto que se escribe. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el flujo de salida 
+\end{DoxyReturn}
+\Hypertarget{classConjuntoLetras_a2c81829649bc02b17d94678df1f059df}\label{classConjuntoLetras_a2c81829649bc02b17d94678df1f059df} 
+\index{ConjuntoLetras@{ConjuntoLetras}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{entrada,  }\item[{\mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&}]{conj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Lee de un flujo de entrada un conjunto de letras. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entrada} & flujo de entrada \\
+\hline
+{\em letra} & el objeto donde se realiza la lectura. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+el flujo de entrada 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/letters\+\_\+set.\+h\item 
+src/letters\+\_\+set.\+cpp\end{DoxyCompactItemize}
