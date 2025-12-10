@@ -97,7 +97,6 @@ public:
      */
     bool operator<(const Letra& l) const;
 
-
     /**
      * @brief Escribe en un flujo de salida una letra
      * @param salida flujo de salida
@@ -133,8 +132,6 @@ public:
 
     Letra getLetra (char caracter) const;
 
-    // Letra& operator[](char caracter);
-
     /**
     * @brief Escribe en un flujo de salida un conjunto de letras
     * @param salida flujo de salida
@@ -158,7 +155,7 @@ public:
      */
     void insert (const Letra &letra);
 
-
+    // ITERADORES
     /**
     * ConjuntoLetras::iterator permite recorrer los elementos del
     * conjunto de letras en orden ascendente

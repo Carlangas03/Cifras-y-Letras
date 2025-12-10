@@ -13,59 +13,34 @@
 #include <ctime>
 using namespace std;
 
-
+/**
+ * @brief Calcular la puntuacion
+ * @param palabra : palabra a la que se le calcula la puntuación
+ * @param diccionario : diccionario en el que debe estar la palabra para ser puntuada
+ * @param conjunto : conjunto de letras que contiene la puntuacion de cada caracter
+ * @return Puntuacion de una palabra
+ */
 int puntuacion(string palabra, const Diccionario & diccionario,
-               const ConjuntoLetras &conjunto) {
-    int punt = 0;
-    mayusculas(palabra);
-
-    if (diccionario.Esta(palabra))
-            for (int i = 0 ; i < palabra.length(); i++ ) {
-                Letra letra = conjunto.getLetra(palabra.at(i));
-                punt += letra.getPuntuacion();
-        }
-
-    return punt;
-}
-
-
-void permutaciones (string cadena, set<string> &perm, const Diccionario &diccionario) {
-
-    if (cadena.length() == 0) {return ;}
-
-    do {
-        if (diccionario.Esta(cadena)) perm.insert(cadena);
-    } while (next_permutation(cadena.begin(),cadena.end()));
-
-
-    for (auto i = 0; i < cadena.size(); i++) {
-        string cadena_aux = cadena;
-        cadena_aux.erase(i, 1);
-        permutaciones(cadena_aux, perm, diccionario);
-    }
-
-}
-
+               const ConjuntoLetras &conjunto);
 
 /**
- * Muestra ayuda para el uso del programa
+ * @brief Calcular palabras a partir de un conjunto de letras
+ * @param cadena : letras a partir de las cuales se calculan las permutaciones
+ * @param perm : permutaciones ya calculadas
+ * @param diccionario : diccionario en el cual las posibles permutaciones deben aparecer
+ */
+void permutaciones (string cadena, set<string> &perm, const Diccionario &diccionario);
+
+/**
+ * @brief Muestra ayuda para el uso del programa
  * @param salida : flujo de salida en el que se muestra la ayuda
  */
-void showHelp(ostream &salida) {
-    salida << "ERROR en los parametros de letras." << endl;
-    salida << "Ejecutar con los siguientes parametros: " << endl;
-    salida << '\t' << "./bin/letras [diccionario.txt] [letras.txt] ";
-    salida << "[num. letras] [modalidad]" <<endl;
-    salida << endl;
-    salida << "Parametros:" << endl;
-    salida << '\t' << "[diccionario.txt] : fichero con el diccionario" << endl;
-    salida << '\t' << "[letras.txt] : fichero con las letras" << endl;
-    salida << '\t' << "[num. letras] : numero de letras que se deben generar" ;
-    salida << " de forma aleatoria" << endl;
-    salida << '\t' << "[modalidad] : modalidad de juego" << endl;
-    salida << "\t\t\t\t" << "Longitud: si el parametro es L, se buscara la palabra mas larga" << endl;
-    salida << "\t\t\t\t" << "Puntuacion: si el parametro es P, se buscara la palabra con mas puntuacion" << endl;
-}
+void showHelp(ostream &salida);
+
+
+
+/*******************************************************************************/
+// PROGRAMA PRINCIPAL
 
 int main(int argc, char *argv[]) {
     srand(time(NULL));
@@ -92,14 +67,13 @@ int main(int argc, char *argv[]) {
     int tamanio_bolsa = stoi(argv[3]);
 
     char modalidad = toupper(*argv[4]);
-    if (modalidad != 'L' && modalidad != 'P') {
+    while (modalidad != 'L' && modalidad != 'P') {
         cout << "ERROR: La modalidad que se ha seleccionado no corresponde "
                  << "con ninguna de las opciones posibles.\n"
                  << "Escriba la modalidad de nuevo [P/L]: ";
             cin >> modalidad;
             modalidad = toupper(modalidad);
     }
-
 
 
     Diccionario diccionario;
@@ -202,4 +176,59 @@ int main(int argc, char *argv[]) {
 
 
     return 0;
+}
+
+
+
+
+// FUNCIONES
+
+int puntuacion(string palabra, const Diccionario & diccionario,
+               const ConjuntoLetras &conjunto) {
+    int punt = 0;
+    mayusculas(palabra);
+
+    if (diccionario.Esta(palabra))
+        for (int i = 0 ; i < palabra.length(); i++ ) {
+            Letra letra = conjunto.getLetra(palabra.at(i));
+            punt += letra.getPuntuacion();
+        }
+
+    return punt;
+}
+
+
+void permutaciones (string cadena, set<string> &perm, const Diccionario &diccionario) {
+
+    if (cadena.length() == 0) {return ;}
+
+    do {
+        if (diccionario.Esta(cadena)) perm.insert(cadena);
+    } while (next_permutation(cadena.begin(),cadena.end()));
+
+
+    for (auto i = 0; i < cadena.size(); i++) {
+        string cadena_aux = cadena;
+        cadena_aux.erase(i, 1);
+        permutaciones(cadena_aux, perm, diccionario);
+    }
+
+}
+
+
+
+void showHelp(ostream &salida) {
+    salida << "ERROR en los parametros de letras." << endl;
+    salida << "Ejecutar con los siguientes parametros: " << endl;
+    salida << '\t' << "./bin/letras [diccionario.txt] [letras.txt] ";
+    salida << "[num. letras] [modalidad]" <<endl;
+    salida << endl;
+    salida << "Parametros:" << endl;
+    salida << '\t' << "[diccionario.txt] : fichero con el diccionario" << endl;
+    salida << '\t' << "[letras.txt] : fichero con las letras" << endl;
+    salida << '\t' << "[num. letras] : numero de letras que se deben generar" ;
+    salida << " de forma aleatoria" << endl;
+    salida << '\t' << "[modalidad] : modalidad de juego" << endl;
+    salida << "\t\t\t\t" << "Longitud: si el parametro es L, se buscara la palabra mas larga" << endl;
+    salida << "\t\t\t\t" << "Puntuacion: si el parametro es P, se buscara la palabra con mas puntuacion" << endl;
 }
