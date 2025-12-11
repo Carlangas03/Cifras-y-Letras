@@ -36,22 +36,20 @@ Este programa no necesita de ningún parámetro. Es un juego sencillo, y todo se
 ### cantidad_letras
 Este programa auxiliar carga en un objeto de la clase Diccionario las posibles palabras válidas y obtiene las puntuaciones de las letras según su frecuencia. La ejecución se realiza en terminal de la siguiente manera:
 
-<code>```./cantidad_letras ./doc/diccionario.txt ./doc/letras.txt salida.txt```</code>
+<code>```./bin/cantidad_letras ./data/diccionario.txt ./data/letras.txt```</code>
 
-* i) <code>```./doc/diccionario.txt```</code>: Corresponde con un fichero en el que aparecen todas las palabras válidas. El formato es una palabra por cada línea. De este fichero se obtendrá un objeto de la clase Diccionario.
+* i) <code>```./data/diccionario.txt```</code>: Corresponde con un fichero en el que aparecen todas las palabras válidas. El formato es una palabra por cada línea. De este fichero se obtendrá un objeto de la clase Diccionario.
 
-* ii) <code>```./doc/letras.txt```</code>:
-
-* iii) <code>```salida.txt```</code>: Fichero de salida. Si no existe, se crea. Corresponde con un fichero del tipo "CantidadLetras", es decir, un fichero con tres columnas: la primera para los caracteres que aparecen, la segunda para la frecuencia absoluta de estos, y la tercera para la puntuación correspondiente. De este fichero se obtendrá en el programa principal un objeto de la clase ConjuntoLetras.
+* ii) <code>```./data/letras.txt```</code>: Fichero de salida. Si no existe, se crea. Corresponde con un fichero del tipo "CantidadLetras", es decir, un fichero con tres columnas: la primera para los caracteres que aparecen, la segunda para la frecuencia absoluta de estos, y la tercera para la puntuación correspondiente. De este fichero se obtendrá en el programa principal un objeto de la clase ConjuntoLetras.
 
 ### letras
 Este es el ejecutable principal del juego. Espera el diccionario, el conjunto de letras, la modalidad de juego (L o P) y la cantidad de letras a usar.
 
-<code>```./letras ./doc/diccionario.txt ./doc/letras.txt [L|P] n```</code>
+<code>```./bin/letras ./data/diccionario.txt ./data/letras.txt [L|P] n```</code>
 
-* i) <code>```./doc/diccionario.txt```</code>: Fichero correspondiente a un diccionario.
+* i) <code>```./data/diccionario.txt```</code>: Fichero correspondiente a un diccionario.
 
-* ii) <code>```./doc/letras.txt```</code>: Fichero de tipo "CantidadLetras" para obtener un objeto de la clase CantidadLetras (set<Letra>).
+* ii) <code>```./data/letras.txt```</code>: Fichero de tipo "CantidadLetras" para obtener un objeto de la clase CantidadLetras (set<Letra>).
 
 * iii) <code>```[L|P]```</code>: Modalidad de juego: L para longitud, P para puntuación.
 

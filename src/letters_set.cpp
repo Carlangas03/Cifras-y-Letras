@@ -2,13 +2,13 @@
 
 
 void Letra::setPuntuacion(int apariciones, int total, int num_letras) {
-    double porcentaje = apariciones / total;
+    double porcentaje = static_cast<double>(apariciones) / total;
     puntuacion = 10 - num_letras*porcentaje;
 };
 
 
 ostream& operator<<(ostream& salida, const Letra& letra) {
-    salida << letra.getCaracter() << '\t'<< '\t' << letra.getCantidad() << '\t'<< '\t' << '\t' << letra.getPuntuacion();
+    salida << letra.getCaracter() << '\t' << letra.getCantidad() <<'\t'<<  '\t' << letra.getPuntuacion();
     return salida;
 }
 
@@ -26,7 +26,7 @@ bool Letra::operator<(const Letra &l) const {
 
 
 ostream& operator<<(ostream& salida, const ConjuntoLetras& conj) {
-    salida << "#Letra\tCantidad\t\tPuntos"<< endl;
+    salida << "#Letra\tCantidad\tPuntos"<< endl;
     set<Letra>::iterator it = conj.letras.begin();
     while (it != conj.letras.end()) {
         salida << *it << endl;

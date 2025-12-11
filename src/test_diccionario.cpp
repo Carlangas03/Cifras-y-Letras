@@ -1,5 +1,9 @@
 //
-// Created by elena on 25/11/2025.
+// PARA COMPILAR:
+// g++ -I ./include ./src/dictionary.cpp ./src/test_diccionario.cpp -o ./bin/test_diccionario
+//
+// PARA EJECUTAR:
+// ./bin/test_diccionario ./data/diccionario.txt
 //
 
 #include <fstream>

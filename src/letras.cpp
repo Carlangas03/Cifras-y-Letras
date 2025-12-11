@@ -2,6 +2,9 @@
 // PARA COMPILAR:
 //  g++ -I ./include ./src/dictionary.cpp ./src/letters_bag.cpp ./src/letras.cpp ./src/letters_set.cpp -o letras
 //
+// PARA EJECUTAR
+// ./bin/letras ./data/diccionario.txt ./data/letras.txt [L|P] n
+
 #include "dictionary.h"
 #include <fstream>
 #include <set>

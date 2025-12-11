@@ -1,3 +1,10 @@
+//
+// PARA COMPILAR
+// g++ ./src/cifras.cpp -o ./bin/cifras
+//
+// PARA EJECUTAR
+// ./bin/cifras
+
 #include <fstream>
 #include <string>
 #include <vector>

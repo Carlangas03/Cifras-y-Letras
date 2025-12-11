@@ -1,5 +1,10 @@
 //
 // Created by elena on 21/11/2025.
+// PARA COMPILAR
+// g++ -I./include ./src/dictionary.cpp ./src/letters_set.cpp ./src/cantidad_letras.cpp -o ./bin/cantidad_letras
+//
+// PARA EJECUTAR
+// ./bin/cantidad_letras ./data/diccionario.txt ./data/letras.txt
 //
 #include <iostream>
 #include <fstream>
@@ -39,9 +44,13 @@ int main (int argc, char* argv[]) {
 
     while (it != diccionario.end()) {
         for (int i = 0 ; i < (*it).size(); i++) {
-            if (!caracteres.count((*it)[i])) caracteres[(*it)[i]] = 0;
-            caracteres[(*it)[i]] += 1;
-            num_caracteres++;
+            if ((((*it)[i]) >= 65 && (*it)[i] <= 90) ||
+                ((*it)[i]) >= 97 && (*it)[i] <= 122) { //asegurarnos que es una letra
+
+                if (!caracteres.count((*it)[i])) caracteres[(*it)[i]] = 0;
+                caracteres[(*it)[i]] += 1;
+                num_caracteres++;
+            }
         }
         ++it;
     }
