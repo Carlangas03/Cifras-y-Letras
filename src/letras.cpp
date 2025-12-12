@@ -60,12 +60,10 @@ int main(int argc, char *argv[]) {
     if (!entrada_dicc)
         throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[1]));
 
-
     ifstream entrada_conj;
     entrada_conj.open(argv[2]);
     if (!entrada_conj)
         throw ios_base::failure(string("Error abriendo el archivo ") + string(argv[2]));
-
 
     int tamanio_bolsa = stoi(argv[3]);
 
@@ -134,12 +132,10 @@ int main(int argc, char *argv[]) {
         // calcular puntuacion del usuario
         if (modalidad == 'L') punt_usuario = palabra_usr.length();
         else punt_usuario = puntuacion (palabra_usr,diccionario,conjunto);
-
         cout << palabra_usr << " --> Puntuacion: " << punt_usuario << endl;
+
         mejor_solucion = palabra_usr;
         mejor_punt = punt_usuario;
-
-
         // POSIBLES SOLUCIONES (mejores que la del usuario)
         cout << endl << "Mis soluciones son: " << endl;
 
@@ -188,15 +184,16 @@ int main(int argc, char *argv[]) {
 
 int puntuacion(string palabra, const Diccionario & diccionario,
                const ConjuntoLetras &conjunto) {
+
     int punt = 0;
     mayusculas(palabra);
 
     if (diccionario.Esta(palabra))
-        for (int i = 0 ; i < palabra.length(); i++ ) {
+
+        for (int i = 0 ; i < palabra.length() ; i++ ) {
             Letra letra = conjunto.getLetra(palabra.at(i));
             punt += letra.getPuntuacion();
         }
-
     return punt;
 }
 

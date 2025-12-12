@@ -6,12 +6,13 @@
 
 using namespace std;
 
+
+// -------------------------- Clase BolsaLetras -------------------------------
 /**
  * @brief TDA LettersBag
  * @details Este TDA almacena un conjunto de char utilizado en el juego de letras.
  * La estructura de datos subyacente es una string.
  */
-
 class BolsaLetras {
 private:
     /**

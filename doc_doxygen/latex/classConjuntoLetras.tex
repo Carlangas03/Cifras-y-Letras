@@ -13,15 +13,14 @@ TDA \doxylink{classConjuntoLetras}{Conjunto\+Letras}.
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classConjuntoLetras_1_1const__iterator}{const\+\_\+iterator}}
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{classConjuntoLetras_1_1const__iterator}{Conjunto\+Letras\+::const\+\_\+iterator} permite recorrer los elementos del conjunto de letras en orden ascendente. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classConjuntoLetras_1_1iterator}{iterator}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \doxylink{classConjuntoLetras_1_1iterator}{Conjunto\+Letras\+::iterator} permite recorrer los elementos del conjunto de letras en orden ascendente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classConjuntoLetras_abe6ccb2681ab82efe37567ec847a9204}\label{classConjuntoLetras_abe6ccb2681ab82efe37567ec847a9204} 
-\mbox{\hyperlink{classLetra}{Letra}} {\bfseries get\+Letra} (char caracter) const
-\item 
+\mbox{\hyperlink{classLetra}{Letra}} \mbox{\hyperlink{classConjuntoLetras_abe6ccb2681ab82efe37567ec847a9204}{get\+Letra}} (char caracter) const
+\begin{DoxyCompactList}\small\item\em Método de búsqueda de una \doxylink{classLetra}{Letra} a partir del caracter que la identifica. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classConjuntoLetras_a557051776d6af9ea93d8a5a5a93d4e37}{insert}} (const \mbox{\hyperlink{classLetra}{Letra}} \&letra)
 \begin{DoxyCompactList}\small\item\em Insertar una letra. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classConjuntoLetras_1_1iterator}{iterator}} \mbox{\hyperlink{classConjuntoLetras_af9c9876356b57b2a25a367d319e04e0f}{begin}} ()
@@ -99,6 +98,27 @@ Final del recorrido.
 \begin{DoxyReturn}{Returns}
 Posicion de final del recorrido 
 \end{DoxyReturn}
+\Hypertarget{classConjuntoLetras_abe6ccb2681ab82efe37567ec847a9204}\label{classConjuntoLetras_abe6ccb2681ab82efe37567ec847a9204} 
+\index{ConjuntoLetras@{ConjuntoLetras}!getLetra@{getLetra}}
+\index{getLetra@{getLetra}!ConjuntoLetras@{ConjuntoLetras}}
+\doxysubsubsection{\texorpdfstring{getLetra()}{getLetra()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLetra}{Letra}} Conjunto\+Letras\+::get\+Letra (\begin{DoxyParamCaption}\item[{char}]{caracter }\end{DoxyParamCaption}) const}
+
+
+
+Método de búsqueda de una \doxylink{classLetra}{Letra} a partir del caracter que la identifica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em caracter} & Carácter que se quiere buscar en el \doxylink{classConjuntoLetras}{Conjunto\+Letras}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La \doxylink{classLetra}{Letra} (TDA \doxylink{classLetra}{Letra}) correspondiente. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+En caso de no existir una extrada con dicho carácter en el Conjunto de Letras, se devuelve una letra creada por el constructor por defecto. 
+\end{DoxyNote}
 \Hypertarget{classConjuntoLetras_a557051776d6af9ea93d8a5a5a93d4e37}\label{classConjuntoLetras_a557051776d6af9ea93d8a5a5a93d4e37} 
 \index{ConjuntoLetras@{ConjuntoLetras}!insert@{insert}}
 \index{insert@{insert}!ConjuntoLetras@{ConjuntoLetras}}

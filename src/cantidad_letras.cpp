@@ -8,12 +8,24 @@
 //
 #include <iostream>
 #include <fstream>
+#include <limits>
 #include <map>
 #include "letters_set.h"
 #include "dictionary.h"
 using namespace std;
 
+pair<int,int> getMaxMin(map<char,int> caracteres) {
 
+    int maximo = std::numeric_limits<int>::min();
+    int minimo = std::numeric_limits<int>::max();
+
+    for (auto it = caracteres.begin();it != caracteres.end(); ++it) {
+        maximo = max(maximo, (*it).second);
+        minimo = min(minimo, (*it).second);
+    }
+
+    return pair<int,int>(maximo, minimo);
+}
 
 int main (int argc, char* argv[]) {
     if (argc != 3) {
@@ -37,33 +49,26 @@ int main (int argc, char* argv[]) {
     Diccionario diccionario ;
     ConjuntoLetras letras;
     dicc >> diccionario;
-    // let >> letras;
     map<char,int> caracteres;
-    Diccionario::iterator it = diccionario.begin();
-    int num_caracteres = 0;
+    //int num_caracteres = 0;
 
-    while (it != diccionario.end()) {
-        for (int i = 0 ; i < (*it).size(); i++) {
-            if ((((*it)[i]) >= 65 && (*it)[i] <= 90) ||
-                ((*it)[i]) >= 97 && (*it)[i] <= 122) { //asegurarnos que es una letra
+    for (Diccionario::iterator it = diccionario.begin();it != diccionario.end(); ++it)
+
+        for (int i = 0 ; i < (*it).size(); i++)
+
+            if ( (*it)[i] >= 65 && (*it)[i] <= 90 ||
+                 ((*it)[i] >= 97 && (*it)[i] <= 122) ) { //asegurarnos que es una letra
 
                 if (!caracteres.count((*it)[i])) caracteres[(*it)[i]] = 0;
                 caracteres[(*it)[i]] += 1;
-                num_caracteres++;
+                //num_caracteres++;
             }
-        }
-        ++it;
-    }
 
-    map<char,int>::iterator it2 = caracteres.begin();
-
-    while (it2 != caracteres.end()) {
+    for (map<char,int>::iterator it2 = caracteres.begin(); it2 != caracteres.end(); it2++) {
         Letra nueva_letra ((*it2).first, (*it2).second,0);
-        nueva_letra.setPuntuacion((*it2).second, num_caracteres, caracteres.size());
+        nueva_letra.setPuntuacion((*it2).second, getMaxMin(caracteres));
         letras.insert(nueva_letra);
-        it2++;
     }
-
 
     ofstream salida (argv[2]);
     if (!salida.is_open()) {
@@ -76,4 +81,3 @@ int main (int argc, char* argv[]) {
 
     return 0;
 }
-

@@ -2,31 +2,15 @@
 #include <ctime>
 #include <iostream>
 
+
+// -------------------------- Clase BolsaLetras -------------------------------
 BolsaLetras::BolsaLetras() {}
 
-string BolsaLetras::toString() const {
-    string s;
-
-    // for (list<char>::const_iterator it = bolsa_letras.begin(); it != bolsa_letras.end(); ++it ) {
-    //     s += (*it);
-    //     s += "\n";
-    // }
-
-
-    s += bolsa_letras[0];
-    for (int i = 1; i < size(); i++) {
-        s += '\n' + bolsa_letras[i] ;
-    }
-    return s;
+int BolsaLetras::size() const{
+    return bolsa_letras.size();
 }
 
 void BolsaLetras::add(Letra letra) {
-    // for (int i = 0; i < letra.getCantidad(); i++) {
-    //     bolsa_letras.push_back(letra.getCaracter());
-    // }
-
-    // string& insert (size_t pos,   size_t n, char c);
-    // Inserts n consecutive copies of character c.
     bolsa_letras.insert(0,letra.getCantidad(),letra.getCaracter());
 }
 
@@ -36,8 +20,23 @@ char BolsaLetras::get() {
     return bolsa_letras[i];
 }
 
-int BolsaLetras::size() const{
-    return bolsa_letras.size();
+string BolsaLetras::toString() const {
+
+    string s;
+    s += bolsa_letras[0];
+    for (int i = 1; i < size(); i++)
+        s += '\n' + bolsa_letras[i] ;
+
+    return s;
+}
+
+void BolsaLetras::cargarBolsa(const ConjuntoLetras &conj) {
+    ConjuntoLetras::const_iterator it = conj.begin();
+
+    while (it != conj.end()) {
+        add(*it);
+        ++it;
+    }
 }
 
 ostream& operator<<(ostream& os, const BolsaLetras& b) {
@@ -53,22 +52,10 @@ istream& operator>>(istream& is, BolsaLetras& b) {
     int cantidad;
     int puntuacion;
 
-    // Versión primera, a lo bruto
     while (is >> caracter >> cantidad >> puntuacion) {
         Letra letra (caracter, cantidad, puntuacion);
         b.add(letra);
     }
 
     return is;
-}
-
-
-void BolsaLetras::cargarBolsa(const ConjuntoLetras &conj) {
-    ConjuntoLetras::const_iterator it = conj.begin();
-
-    while (it != conj.end()) {
-        add(*it);
-        ++it;
-    }
-
-}
+};

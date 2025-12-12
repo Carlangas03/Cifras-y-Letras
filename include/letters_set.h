@@ -3,8 +3,12 @@
 
 #include <set>
 #include <sstream>
+#include <vector>
+
 using namespace std;
 
+
+// --------------------------- Clase Letra ------------------------------------
 /**
  * @brief TDA Letra
  *
@@ -67,7 +71,7 @@ public:
      * @param num_letras: num letras diferentes de un diccionario
      * @doc La puntuación estará entre 1 y 10
      */
-    void setPuntuacion (int apariciones , int total, int num_letras);
+    void setPuntuacion (int apariciones , pair<int,int> max_min);
 
     /**
      * @brief Devuelve el caracter asociado a una letra
@@ -115,7 +119,7 @@ public:
 };
 
 
-
+// ------------------------- Clase ConjuntoLetras -----------------------------
 /**
  * @brief TDA ConjuntoLetras
  *
@@ -124,12 +128,19 @@ public:
  * que tenemos de la letra y la puntuación que dicha letra otorga cuando se
  * utiliza en una palabra
  */
-
 class ConjuntoLetras {
 private:
     set<Letra> letras;  /**< conjunto de letras */
 public:
-
+    /**
+     * @brief Método de búsqueda de una Letra a partir del caracter
+     * que la identifica.
+     * @param caracter Carácter que se quiere buscar en el ConjuntoLetras.
+     * @return La Letra (TDA Letra) correspondiente.
+     * @note En caso de no existir una extrada con dicho carácter en el
+     * Conjunto de Letras, se devuelve una letra creada por el constructor
+     * por defecto.
+     */
     Letra getLetra (char caracter) const;
 
     /**
@@ -155,9 +166,10 @@ public:
      */
     void insert (const Letra &letra);
 
-    // ITERADORES
+
+    // -------------------------- Clase Iterator --------------------------
     /**
-    * ConjuntoLetras::iterator permite recorrer los elementos del
+    * @brief ConjuntoLetras::iterator permite recorrer los elementos del
     * conjunto de letras en orden ascendente
     */
     class iterator {
@@ -165,28 +177,43 @@ public:
         set<Letra>::iterator el_iterador;
     public:
         iterator() {}
+
         iterator(set<Letra>::iterator iter) : el_iterador(iter) {};
+
         bool operator!=(const ConjuntoLetras::iterator &iter);
+
         bool operator==(const ConjuntoLetras::iterator &iter);
+
         const Letra& operator*() const;
+
         iterator& operator++();
+
         iterator& operator=(const ConjuntoLetras::iterator &iter);
     };
 
+
+    // ------------------------ Clase Const_iterator --------------------------
     /**
-    * ConjuntoLetras::const_iterator permite recorrer los elementos del
+    * @brief ConjuntoLetras::const_iterator permite recorrer los elementos del
     * conjunto de letras en orden ascendente
     */
     class const_iterator {
     private:
         set<Letra>::const_iterator el_iterador;
     public:
+
         const_iterator() {}
+
         const_iterator(set<Letra>::const_iterator iter) : el_iterador(iter) {};
+
         bool operator!=(const ConjuntoLetras::const_iterator &iter);
+
         bool operator==(const ConjuntoLetras::const_iterator &iter);
+
         const Letra& operator*() const;
+
         const_iterator& operator++();
+
         const_iterator& operator=(const ConjuntoLetras::const_iterator &iter);
     };
 
@@ -214,8 +241,5 @@ public:
     * @return Posicion de final del recorrido
     */
     const_iterator end() const;
-
 };
-
-
 #endif

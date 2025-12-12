@@ -1,16 +1,10 @@
 #include "dictionary.h"
 #include <fstream>
 
+// ------------------------------- Clase Diccionario --------------------------
 Diccionario::Diccionario() {}
 
 int Diccionario::size() const { return datos.size(); }
-
-bool Diccionario::Esta(const string &palabra) const {
-    if (datos.count(palabra) == 0)
-        return false;
-    else
-        return true;
-}
 
 vector<string> Diccionario::PalabrasLongitud(int longitud) {
     vector <string> palabras;
@@ -21,11 +15,11 @@ vector<string> Diccionario::PalabrasLongitud(int longitud) {
     return palabras;
 }
 
-ostream & operator<<(ostream & os, const Diccionario &D) {
-    for (Diccionario::iterator it = D.begin(); it != D.end(); ++it)
-        os << *it << endl;
-
-    return os;
+bool Diccionario::Esta(const string &palabra) const {
+    if (datos.count(palabra) == 0)
+        return false;
+    else
+        return true;
 }
 
 istream & operator>>(istream & is,Diccionario &D) {
@@ -35,6 +29,15 @@ istream & operator>>(istream & is,Diccionario &D) {
     return is;
 };
 
+ostream & operator<<(ostream & os, const Diccionario &D) {
+    for (Diccionario::iterator it = D.begin(); it != D.end(); ++it)
+        os << *it << endl;
+
+    return os;
+}
+
+
+//--------------------------- Clase Iterator ----------------------------------
 Diccionario::iterator::iterator() {}
 
 const string & Diccionario::iterator::operator*() const {
@@ -66,6 +69,8 @@ const Diccionario::iterator Diccionario::end() const {
     return i;
 }
 
+
+// ----------------------------- Funciones externas ---------------------------
 string mayusculas(string &palabra) {
     for (int i = 0 ; i < palabra.length(); i++)
         palabra[i] = toupper(palabra[i]);

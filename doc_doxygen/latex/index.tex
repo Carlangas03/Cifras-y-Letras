@@ -14,20 +14,18 @@ Este programa no necesita de ningún parámetro. Es un juego sencillo, y todo se
 \hypertarget{index_autotoc_md7}{}\doxysubsubsection{\texorpdfstring{cantidad\+\_\+letras}{cantidad\_letras}}\label{index_autotoc_md7}
 Este programa auxiliar carga en un objeto de la clase \doxylink{classDiccionario}{Diccionario} las posibles palabras válidas y obtiene las puntuaciones de las letras según su frecuencia. La ejecución se realiza en terminal de la siguiente manera\+:
 
-{\ttfamily {\ttfamily ./cantidad\+\_\+letras ./doc/diccionario.txt ./doc/letras.txt salida.\+txt}}
+{\ttfamily {\ttfamily ./bin/cantidad\+\_\+letras ./data/diccionario.txt ./data/letras.txt}}
 
-i) {\ttfamily {\ttfamily ./doc/diccionario.txt}}\+: Corresponde con un fichero en el que aparecen todas las palabras válidas. El formato es una palabra por cada línea. De este fichero se obtendrá un objeto de la clase \doxylink{classDiccionario}{Diccionario}.
+i) {\ttfamily {\ttfamily ./data/diccionario.txt}}\+: Corresponde con un fichero en el que aparecen todas las palabras válidas. El formato es una palabra por cada línea. De este fichero se obtendrá un objeto de la clase \doxylink{classDiccionario}{Diccionario}.
 
-ii) {\ttfamily {\ttfamily ./doc/letras.txt}}\+:
-
-iii) {\ttfamily {\ttfamily salida.\+txt}}\+: Fichero de salida. Si no existe, se crea. Corresponde con un fichero del tipo "{}\+Cantidad\+Letras"{}, es decir, un fichero con tres columnas\+: la primera para los caracteres que aparecen, la segunda para la frecuencia absoluta de estos, y la tercera para la puntuación correspondiente. De este fichero se obtendrá en el programa principal un objeto de la clase \doxylink{classConjuntoLetras}{Conjunto\+Letras}.\hypertarget{index_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{letras}{letras}}\label{index_autotoc_md8}
+ii) {\ttfamily {\ttfamily ./data/letras.txt}}\+: Fichero de salida. Si no existe, se crea. Corresponde con un fichero del tipo "{}\+Cantidad\+Letras"{}, es decir, un fichero con tres columnas\+: la primera para los caracteres que aparecen, la segunda para la frecuencia absoluta de estos, y la tercera para la puntuación correspondiente. De este fichero se obtendrá en el programa principal un objeto de la clase \doxylink{classConjuntoLetras}{Conjunto\+Letras}.\hypertarget{index_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{letras}{letras}}\label{index_autotoc_md8}
 Este es el ejecutable principal del juego. Espera el diccionario, el conjunto de letras, la modalidad de juego (L o P) y la cantidad de letras a usar.
 
-{\ttfamily {\ttfamily ./letras ./doc/diccionario.txt ./doc/letras.txt \mbox{[}L\texorpdfstring{$\vert$}{|}P\mbox{]} n}}
+{\ttfamily {\ttfamily ./bin/letras ./data/diccionario.txt ./data/letras.txt \mbox{[}L\texorpdfstring{$\vert$}{|}P\mbox{]} n}}
 
-i) {\ttfamily {\ttfamily ./doc/diccionario.txt}}\+: Fichero correspondiente a un diccionario.
+i) {\ttfamily {\ttfamily ./data/diccionario.txt}}\+: Fichero correspondiente a un diccionario.
 
-ii) {\ttfamily {\ttfamily ./doc/letras.txt}}\+: Fichero de tipo "{}\+Cantidad\+Letras"{} para obtener un objeto de la clase Cantidad\+Letras (set$<$\+Letra$>$).
+ii) {\ttfamily {\ttfamily ./data/letras.txt}}\+: Fichero de tipo "{}\+Cantidad\+Letras"{} para obtener un objeto de la clase Cantidad\+Letras (set$<$\+Letra$>$).
 
 iii) {\ttfamily {\ttfamily \mbox{[}L\texorpdfstring{$\vert$}{|}P\mbox{]}}}\+: Modalidad de juego\+: L para longitud, P para puntuación.
 

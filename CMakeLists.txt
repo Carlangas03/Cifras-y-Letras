@@ -24,13 +24,13 @@ if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/conjunto_letras.cpp)
   )
 endif()
 
-if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/bolsa.cpp)
-  add_executable(bolsa
-    ${BASE_FOLDER}/src/bolsa.cpp
-          src/letras.cpp
-          src/letters_bag.cpp
-          src/cifras.cpp)
-endif()
+#if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/bolsa.cpp)
+#  add_executable(bolsa
+#    ${BASE_FOLDER}/src/bolsa.cpp
+#          src/letras.cpp
+#          src/letters_bag.cpp
+#          src/cifras.cpp)
+#endif()
 
 if (EXISTS ${CMAKE_SOURCE_DIR}/${BASE_FOLDER}/src/bolsa_letras.cpp)
   add_executable(bolsa_letras
@@ -73,4 +73,3 @@ if (DOXYGEN_FOUND)
 else()
     message("Doxygen needs to be installed to generate documentation")
 endif()
-

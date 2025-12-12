@@ -7,11 +7,12 @@
 
 using namespace std;
 
+
+// ------------------------------- Clase Diccionario --------------------------
 /**
- * @brief TDA Dictionary
+ * @brief TDA Diccionario
  * @details Almacena las palabras de un fichero de texto y permite iterar sobre ellas
 **/
-
 class Diccionario{
 private:
     /**
@@ -61,13 +62,12 @@ public:
     **/
     friend ostream & operator<<(ostream & os, const Diccionario &D);
 
-
+    //------------------------- Clase Iterator --------------------------------
     /**
      * @brief Clase iteradora para el TDA Diccionario.
      * @details Se basa en un set<string>::iterator.
     **/
     class iterator{
-
     private:
         /**
          * @brief iterador de la clase set<string>::iterator como base para el iterador del
@@ -138,6 +138,8 @@ public:
     const iterator end() const;
 };
 
+
+// ----------------------------- Funciones externas ---------------------------
 /**
  * @brief Función externa a la clase.
  * @details Pasa a mayúsculas todos los caracteres de la palabra que se
