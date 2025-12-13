@@ -38,7 +38,8 @@ int GeneraMeta () ;
  * @return : true si se ha conseguido la solucion
  *           false en otro caso
  */
-bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol);
+bool Solucion (vector<int> &conjunto, int meta, string sol_actual, string &sol,
+                int &aprox, string &mejor_sol);
 
 
 
@@ -49,8 +50,10 @@ int main (int argc , char *argv[]) {
     srand(time(NULL));
     vector<int> C = {1,2,3,4,5,6,7,8,9,10,25,50,75,100};
 
+
     //GENERAR EL CONJUNTO DE NUMEROS
     vector<int> conjunto = Conjunto(C,6);
+    // conjunto = {10,2,2,10,25,75};
     cout << "Las cifras son : " << endl;
     for (int i = 0 ; i < conjunto.size() ; i++)
         cout << conjunto[i] << " ";
@@ -58,17 +61,22 @@ int main (int argc , char *argv[]) {
 
     // GENERAR NUMERO A CONSEGUIR
     int meta = GeneraMeta();
+    // meta =  678;
     cout << "\nNumero a conseguir: " << meta << endl;
 
 
     // GENERAR SOLUCION
-    string solucion;
-    if (Solucion(conjunto, meta,solucion, solucion)) {
+    int aprox = 1000; //lo suficientemente grande
+    string solucion, mejor_solucion;
+    if (Solucion(conjunto, meta,solucion,solucion,aprox,mejor_solucion)) {
         cout << "Hay solucion: " << endl;
         cout << solucion << endl;
     } else {
         cout << "No hay solucion" << endl;
+        cout << "Mi aproximacion es: " << endl << mejor_solucion ;
+        cout << "Diferencia de " << aprox << endl << endl;
     }
+
     return 0;
 }
 
@@ -88,17 +96,20 @@ int GeneraMeta () {
     return 100 + rand() % 900;
 }
 
-bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol) {
+bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol, int &aprox, string &mejor_sol) {
 
     //Si la solución está en mi conjunto
     if (find (conjunto.begin(),conjunto.end(),meta) != conjunto.end()) {
         sol = sol_actual;
         return true;
     }
+    if (conjunto.size()==1)
+        return false;
+
+    sort(conjunto.begin(),conjunto.end());
 
     for (int i = 0 ; i < conjunto.size() ; i++) {
         for (int j = i + 1; j < conjunto.size(); j++) {
-
             vector<int> restantes = conjunto;
 
             int numi = restantes[i];
@@ -106,7 +117,7 @@ bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol)
             string operacion;
 
             // Eliminamos los numeros que vamos a usar
-            restantes.erase(restantes.begin()+j);
+            restantes.erase(restantes.begin()+j); //primero borro el de la posicion mayor
             restantes.erase(restantes.begin()+i);
 
 
@@ -115,7 +126,11 @@ bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol)
             restantes.push_back(numi+numj);
             operacion = sol_actual + to_string (numi) + " + " + to_string (numj) ;
             operacion += " = " + to_string(restantes.back()) + "\n";
-            if (Solucion(restantes,meta,operacion,sol)) return true;
+            if (aprox > abs(restantes.back()-meta)) {
+                aprox = abs(restantes.back()-meta);
+                mejor_sol = operacion;
+            }
+            if (Solucion(restantes,meta,operacion,sol,aprox,mejor_sol)) return true;
             restantes.pop_back();
 
             // RESTA
@@ -123,7 +138,11 @@ bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol)
                 restantes.push_back(numj-numi);
                 operacion = sol_actual+ to_string (numj) + " - " + to_string (numi) ;
                 operacion += " = " + to_string(restantes.back()) + "\n";
-                if (Solucion(restantes,meta,operacion,sol)) return true;
+                if (aprox > abs(restantes.back()-meta)) {
+                    aprox = abs(restantes.back()-meta);
+                    mejor_sol = operacion;
+                }
+                if (Solucion(restantes,meta,operacion,sol,aprox,mejor_sol)) return true;
                 restantes.pop_back();
             }
 
@@ -131,15 +150,23 @@ bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol)
             restantes.push_back(numj*numi);
             operacion = sol_actual+ to_string (numj) + " * " + to_string (numi) ;
             operacion += " = " + to_string(restantes.back()) + "\n";
-            if (Solucion(restantes,meta,operacion,sol)) return true;
+            if (aprox > abs(restantes.back()-meta)) {
+                aprox = abs(restantes.back()-meta);
+                mejor_sol = operacion;
+            }
+            if (Solucion(restantes,meta,operacion,sol,aprox,mejor_sol)) return true;
             restantes.pop_back();
 
             //DIVISION
-            if (numj % numi == 0) { // Comprobamos que la division es válida
+            if (numj % numi == 0 && numi != 0) { // Comprobamos que la division es válida
                 restantes.push_back(numj/numi);
                 operacion = sol_actual + to_string (numj) + " / " + to_string (numi) ;
                 operacion += " = " + to_string(restantes.back()) + "\n";
-                if (Solucion(restantes,meta,operacion,sol)) return true;
+                if (aprox > abs(restantes.back()-meta)) {
+                    aprox = abs(restantes.back()-meta);
+                    mejor_sol = operacion;
+                }
+                if (Solucion(restantes,meta,operacion,sol,aprox,mejor_sol)) return true;
                 restantes.pop_back();
             }
 
