@@ -41,7 +41,7 @@ int GeneraMeta () ;
  * @return : true si se ha conseguido la solucion
  *           false en otro caso
  */
-bool Solucion (vector<int> &conjunto, int meta, string sol_actual, string &sol,
+bool Solucion (vector<int> conjunto, int meta, string sol_actual, string &sol,
                 int &aprox, string &mejor_sol);
 
 /**
@@ -124,7 +124,7 @@ int GeneraMeta () {
     return 100 + rand() % 900;
 }
 
-bool Solucion ( vector<int> &conjunto, int meta, string sol_actual, string &sol, int &aprox, string &mejor_sol) {
+bool Solucion ( vector<int> conjunto, int meta, string sol_actual, string &sol, int &aprox, string &mejor_sol) {
 
     //Si la solución está en mi conjunto
     if (find (conjunto.begin(),conjunto.end(),meta) != conjunto.end()) {
