@@ -209,7 +209,9 @@ void Temporizador (int tiempo_total, ostream & os) {
     for (int i = tiempo_total; i >= 0; i--) {
         int minutos = i / 60;
         int segundos = i % 60;
-        os << "\r" << "Tiempo restante: " << setw(2) << setfill('0') << minutos << ":" << setw(2) << setfill('0') << segundos << flush;
+        os << "\r" << "Tiempo restante: "
+           << setw(2) << setfill('0') << minutos << ":"
+           << setw(2) << setfill('0') << segundos << flush;
         this_thread::sleep_for(chrono::seconds(1));
     }
     os << endl << endl;
