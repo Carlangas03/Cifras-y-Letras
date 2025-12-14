@@ -16,6 +16,7 @@
 #include <ctime>
 using namespace std;
 
+
 /**
  * @brief Calcular la puntuacion
  * @param palabra : palabra a la que se le calcula la puntuación
@@ -90,7 +91,6 @@ int main(int argc, char *argv[]) {
 
     /*************************************************************************/
 
-
     do {
         string palabra_usr, mejor_solucion;
         int punt_usuario, mejor_punt;
@@ -159,7 +159,6 @@ int main(int argc, char *argv[]) {
         cout << endl << "Puntuacion: " << mejor_punt;
         cout << endl << endl;
 
-
         // CONDICIÓN PARA SEGUIR EL JUEGO
         cout << "¿Seguir jugando [S/N]?: ";
         cin >> seguir_jugando;
@@ -173,10 +172,8 @@ int main(int argc, char *argv[]) {
         }
     } while (seguir_jugando == 'S');
 
-
     return 0;
 }
-
 
 
 
