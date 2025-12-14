@@ -15,28 +15,43 @@ Clase iteradora para el TDA \doxylink{classDiccionario}{Diccionario}.
 \Hypertarget{classDiccionario_1_1iterator_a09b6773eef10e4563efa069d3d88f4fc}\label{classDiccionario_1_1iterator_a09b6773eef10e4563efa069d3d88f4fc} 
 {\bfseries iterator} ()
 \begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
-const string \& \mbox{\hyperlink{classDiccionario_1_1iterator_ab36e5ad0f0517459e5e1ce2e9c4bf96b}{operator\texorpdfstring{$\ast$}{*}}} () const
+const string \& \mbox{\hyperlink{classDiccionario_1_1iterator_ab36e5ad0f0517459e5e1ce2e9c4bf96b_ab36e5ad0f0517459e5e1ce2e9c4bf96b}{operator\texorpdfstring{$\ast$}{*}}} () const
 \begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$\ast$}{*}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \& \mbox{\hyperlink{classDiccionario_1_1iterator_a94988ab91331a66258a208276730bb9c}{operator++}} ()
+\mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \& \mbox{\hyperlink{classDiccionario_1_1iterator_a94988ab91331a66258a208276730bb9c_a94988ab91331a66258a208276730bb9c}{operator++}} ()
 \begin{DoxyCompactList}\small\item\em Sobrecarga del operador ++. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classDiccionario_1_1iterator_a6ab38d0620a196200714ee04291dea55}{operator==}} (const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \&i)
+bool \mbox{\hyperlink{classDiccionario_1_1iterator_a6ab38d0620a196200714ee04291dea55_a6ab38d0620a196200714ee04291dea55}{operator==}} (const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \&i)
 \begin{DoxyCompactList}\small\item\em Sobrecarga del operador ==. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classDiccionario_1_1iterator_a5d51cafd201ab15390e991c6aed327ee}{operator!=}} (const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \&i)
+bool \mbox{\hyperlink{classDiccionario_1_1iterator_a5d51cafd201ab15390e991c6aed327ee_a5d51cafd201ab15390e991c6aed327ee}{operator!=}} (const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \&i)
 \begin{DoxyCompactList}\small\item\em Sobrecarga del operador !=. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classDiccionario_1_1iterator_ad36be158dde0129b4e0d03d0e454a26b}{Diccionario}}
+class \mbox{\hyperlink{classDiccionario_1_1iterator_ad36be158dde0129b4e0d03d0e454a26b_ad36be158dde0129b4e0d03d0e454a26b}{Diccionario}}
 \begin{DoxyCompactList}\small\item\em friend class \doxylink{classDiccionario}{Diccionario} \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Clase iteradora para el TDA \doxylink{classDiccionario}{Diccionario}. 
 
-Se basa en un set$<$string$>$\+::iterator. 
+Se basa en un set$<$string$>$\+::iterator. Permitirá recorrer diccionarios de la forma que si indica a continuación\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classDiccionario}{Diccionario}}\ d;}
+\DoxyCodeLine{ifstream\ entrada(\textcolor{stringliteral}{"{}fichero\_diccionario.txt"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!entrada)\ \{}
+\DoxyCodeLine{\ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Error\ al\ abrir\ el\ fichero"{}};}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classDiccionario_1_1iterator}{Diccionario::iterator}}\ it\ =\ d.\mbox{\hyperlink{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54_a60ad3a54e4a212d1c066cdbcd7235c54}{begin}}();\ it\ !=\ d.\mbox{\hyperlink{classDiccionario_a24f754b8c159402498d6b369a52efee9_a24f754b8c159402498d6b369a52efee9}{end}}();\ it++)\ \{}
+\DoxyCodeLine{\ \ \ \textcolor{comment}{//\ código\ de\ iteración}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classDiccionario_1_1iterator_a5d51cafd201ab15390e991c6aed327ee}\label{classDiccionario_1_1iterator_a5d51cafd201ab15390e991c6aed327ee} 
+\Hypertarget{classDiccionario_1_1iterator_a5d51cafd201ab15390e991c6aed327ee_a5d51cafd201ab15390e991c6aed327ee}\label{classDiccionario_1_1iterator_a5d51cafd201ab15390e991c6aed327ee_a5d51cafd201ab15390e991c6aed327ee} 
 \index{Diccionario::iterator@{Diccionario::iterator}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!Diccionario::iterator@{Diccionario::iterator}}
 \doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
@@ -57,7 +72,7 @@ Calcula si las palabras a las que apuntan el iterador implícito y el iterador d
 \begin{DoxyReturn}{Returns}
 true si las palabras son diferentes; false si son iguales. 
 \end{DoxyReturn}
-\Hypertarget{classDiccionario_1_1iterator_ab36e5ad0f0517459e5e1ce2e9c4bf96b}\label{classDiccionario_1_1iterator_ab36e5ad0f0517459e5e1ce2e9c4bf96b} 
+\Hypertarget{classDiccionario_1_1iterator_ab36e5ad0f0517459e5e1ce2e9c4bf96b_ab36e5ad0f0517459e5e1ce2e9c4bf96b}\label{classDiccionario_1_1iterator_ab36e5ad0f0517459e5e1ce2e9c4bf96b_ab36e5ad0f0517459e5e1ce2e9c4bf96b} 
 \index{Diccionario::iterator@{Diccionario::iterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
 \index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Diccionario::iterator@{Diccionario::iterator}}
 \doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
@@ -73,7 +88,7 @@ Devuelve el elemento del diccionario al que apunta el iterador.
 \begin{DoxyNote}{Note}
 Método de consulta. 
 \end{DoxyNote}
-\Hypertarget{classDiccionario_1_1iterator_a94988ab91331a66258a208276730bb9c}\label{classDiccionario_1_1iterator_a94988ab91331a66258a208276730bb9c} 
+\Hypertarget{classDiccionario_1_1iterator_a94988ab91331a66258a208276730bb9c_a94988ab91331a66258a208276730bb9c}\label{classDiccionario_1_1iterator_a94988ab91331a66258a208276730bb9c_a94988ab91331a66258a208276730bb9c} 
 \index{Diccionario::iterator@{Diccionario::iterator}!operator++@{operator++}}
 \index{operator++@{operator++}!Diccionario::iterator@{Diccionario::iterator}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}}
@@ -86,7 +101,7 @@ Sobrecarga del operador ++.
 Calcula la posición siguiente del diccionario. Como es de imaginar, es la dirección de la siguiente palabra del diccionario. \begin{DoxyReturn}{Returns}
 Puntero a la siguiente posición según la indicación anterior. 
 \end{DoxyReturn}
-\Hypertarget{classDiccionario_1_1iterator_a6ab38d0620a196200714ee04291dea55}\label{classDiccionario_1_1iterator_a6ab38d0620a196200714ee04291dea55} 
+\Hypertarget{classDiccionario_1_1iterator_a6ab38d0620a196200714ee04291dea55_a6ab38d0620a196200714ee04291dea55}\label{classDiccionario_1_1iterator_a6ab38d0620a196200714ee04291dea55_a6ab38d0620a196200714ee04291dea55} 
 \index{Diccionario::iterator@{Diccionario::iterator}!operator==@{operator==}}
 \index{operator==@{operator==}!Diccionario::iterator@{Diccionario::iterator}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
@@ -112,7 +127,7 @@ true si ambas son iguales; false en caso contrario.
 
 
 \doxysubsection{Friends And Related Symbol Documentation}
-\Hypertarget{classDiccionario_1_1iterator_ad36be158dde0129b4e0d03d0e454a26b}\label{classDiccionario_1_1iterator_ad36be158dde0129b4e0d03d0e454a26b} 
+\Hypertarget{classDiccionario_1_1iterator_ad36be158dde0129b4e0d03d0e454a26b_ad36be158dde0129b4e0d03d0e454a26b}\label{classDiccionario_1_1iterator_ad36be158dde0129b4e0d03d0e454a26b_ad36be158dde0129b4e0d03d0e454a26b} 
 \index{Diccionario::iterator@{Diccionario::iterator}!Diccionario@{Diccionario}}
 \index{Diccionario@{Diccionario}!Diccionario::iterator@{Diccionario::iterator}}
 \doxysubsubsection{\texorpdfstring{Diccionario}{Diccionario}}

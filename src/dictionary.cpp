@@ -4,6 +4,10 @@
 // ------------------------------- Clase Diccionario --------------------------
 Diccionario::Diccionario() {}
 
+Diccionario::Diccionario(string fichero_diccionario) {
+    fichero_diccionario >> this;
+}
+
 int Diccionario::size() const { return datos.size(); }
 
 vector<string> Diccionario::PalabrasLongitud(int longitud) {
@@ -71,7 +75,7 @@ const Diccionario::iterator Diccionario::end() const {
 
 
 // ----------------------------- Funciones externas ---------------------------
-string mayusculas(string &palabra) {
+string mayusculas(const string &palabra) {
     for (int i = 0 ; i < palabra.length(); i++)
         palabra[i] = toupper(palabra[i]);
     return palabra;

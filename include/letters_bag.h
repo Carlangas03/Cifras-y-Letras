@@ -28,6 +28,30 @@ public:
      */
     BolsaLetras();
 
+
+    /**
+     * @brief Constructor con un parámetro.
+     * @details Genera una bolsa de letras de un conjunto de letras (TDA
+     * ConjuntoLetras) ya existente.
+     * Añade cada caracter tantas veces como indica el campo Cantidad en cada
+     * letra (TDA Letra) del conjunto.
+     *
+     * @code
+     *
+     * ConjuntoLetras conjunto;
+     * ifstream entrada("letras.txt") // <-- Fichero de salida del programa cantidad_letras
+     *
+     * if (!entrada) {
+     *    cout << "Error al abrir el fichero de entrada" << endl;
+     *    return 1;
+     * }
+     *
+     * BoslaLetras(conjunto);
+     *
+     * @endcode
+    **/
+    BolsaLetras(const ConjuntoLetras & conjunto);
+
     /**
      * @brief Calcula la cantidad total de elementos que hay en la bolsa
      * @return Tamaño de la bolsa.
@@ -36,8 +60,29 @@ public:
     int size() const;
 
     /**
-     * @brief Método para añadir un elemento a la bolsa
+     * @brief Método para añadir un elemento a la bolsa.
+     * @details Este es el método que se encarga de introducir en la bolsa
+     * los caracteres tantas veces como indique el campo `cantidad` de la
+     * @p letra (TDA Letra).
      * @param letra Letra que se va a añadir a la bolsa
+     *
+     * @code
+     *
+     * ifstream entrada("letras.txt") // <-- Fichero de salida del programa cantidad_letras
+     *
+     * if (!entrada) {
+     *    cout << "Error al abrir el fichero de entrada" << endl;
+     *    return 1;
+     * }
+     *
+     * ConjuntoLetras conjunot ("letras.txt");
+     * Letra letra('a', 3, 10);
+     * BolsaLetras bolsa(conjunto);
+     *
+     * bolsa.add(letra);
+     * cout << bolsa << endl; // <-- "aaa"
+     *
+     * @endcode
      */
     void add(Letra letra);
 
@@ -58,8 +103,10 @@ public:
 
     /**
      * @brief Método para cargar una bolsa dado un conjunto de letras.
-     * @details Genera la bolsa a partir de un conjunto de letras (TDA ConjuntoLetras).
-     * @param conj : conjunto de letras a partir del cual se crea la bolsa
+     * @details Genera la bolsa a partir de un conjunto de letras (TDA ConjuntoLetras),
+     * de forma que en la bolsa se incluyen los caracteres correspondientes a las letras
+     * tantas veces como indica su campo `cantidad`.
+     * @param conj Conjunto de letras a partir del cual se crea la bolsa
      */
     void cargarBolsa (const ConjuntoLetras &conj) ;
 

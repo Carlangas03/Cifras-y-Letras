@@ -12,6 +12,7 @@ using namespace std;
 /**
  * @brief TDA Diccionario
  * @details Almacena las palabras de un fichero de texto y permite iterar sobre ellas
+ *
 **/
 class Diccionario{
 private:
@@ -23,9 +24,18 @@ private:
 
 public:
     /**
-    * @brief Construye un diccionario vacío.
+    * @brief Constructor sin parámetros.
+    * @details Construye un diccionario vacío.
     **/
     Diccionario();
+
+    /**
+     * @brief Constructor con un parámetro.
+     * @param fichero_diccionario Nombre del fichero que se va a tomar como diccionario.
+     * @pre El fichero debe tener el formato adecuado, es decir, una palabra por línea.
+     * @note Este constructor se basa en el operador >>.
+    **/
+    Diccionario(string fichero_diccionario);
 
     /**
      * @brief Devuelve el número de palabras en el diccionario
@@ -33,9 +43,18 @@ public:
     int size() const ;
 
     /**
-    * @brief Obtiene todas las palabras en el diccionario de un longitud dada
-    * @param longitud la longitud de las palabras de salida
-    * @return un vector con las palabras de longitud especifica en el parametro de entrada
+    * @brief Obtiene todas las palabras en el diccionario de un longitud dada.
+    * @param Longitud la longitud de las palabras de salida.
+    * @return Un vector con las palabras de longitud especifica en el parametro de entrada.
+    * @code
+    * Diccionario d("fichero_diccionario.txt");
+    * vector<string> v;
+    *
+    * v = d.PalabrasLongitud(5);
+    * cout << v << endl; // Muestra las palabras de longitud = 5 pertenecientes al diccionario
+    *                    // cargado desde el fichero "fichero_diccionario.txt"
+    *
+    * @endcode
     **/
     vector<string> PalabrasLongitud(int longitud);
 
@@ -43,6 +62,17 @@ public:
     * @brief Indica si una palabra está en el diccionario o no.
     * @param palabra la palabra que se quiere buscar
     * @return true si la palabra está en el diccionario. False en caso contrario
+    * @code
+    * Diccionario d("fichero_diccionario.txt");
+    * string palabra ("Hola");
+    *
+    * if (d.Esta(palabra)
+    *   cout << "La palabra " << palabra << " pertenece al diccionario." << endl;
+    *
+    * else
+    *   cout << "La palabra " << palabra << " no pertenece al diccionario." << endl;
+    *
+    * @endcode
     **/
     bool Esta(const string & palabra) const;
 
@@ -55,7 +85,8 @@ public:
     friend istream & operator>>(istream & is,Diccionario &D);
 
     /**
-    * @brief Escribe en un flujo de salida un diccionario.
+    * @brief Escribe en un flujo de salida el diccionario correspondiente
+    * al objeto implícito.
     * @param os flujo de salida.
     * @param D el objeto diccionario que se escribe.
     * @return el flujo de salida.
@@ -65,7 +96,22 @@ public:
     //------------------------- Clase Iterator --------------------------------
     /**
      * @brief Clase iteradora para el TDA Diccionario.
-     * @details Se basa en un set<string>::iterator.
+     * @details Se basa en un set<string>::iterator. Permitirá recorrer diccionarios
+     * de la forma que si indica a continuación:
+     * @code
+     * Diccionario d;
+     * ifstream entrada("fichero_diccionario.txt");
+     *
+     * if (!entrada) {
+     *    cout << "Error al abrir el fichero";
+     *    return 1;
+     * }
+     *
+     * for (Diccionario::iterator it = d.begin(); it != d.end(); it++) {
+     *    // código de iteración
+     * }
+     *
+     * @endcode
     **/
     class iterator{
     private:
@@ -145,8 +191,19 @@ public:
  * @details Pasa a mayúsculas todos los caracteres de la palabra que se
  * pasa por parámetro.
  * @param palabra Palabra que se va a pasar a mayúsculas.
- * @note Método que modifica.
  * @return La palabra en mayúsculas.
+ *
+ * @code
+ *
+ * string palabra ("palabra1"), palabra2 ("pALabRA2");
+ *
+ * cout << palabra1 << endl; // => "palabra1"
+ * cout << palabra2 << endl; // => "pALabRA2"
+ *
+ * palabra1 = mayusculas(palabra1); cout << palabra1;  // => "PALABRA1"
+ * palabra2 = mayusculas(palabra2); cout << palabra2;  // => "PALABRA2"
+ *
+ * @endcode
  */
-string mayusculas(string &palabra);
+string mayusculas(const string &palabra);
 #endif

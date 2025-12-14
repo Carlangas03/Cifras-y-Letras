@@ -1,8 +1,19 @@
-PROJECT_NAME           = "Práctica final - Juego de las Letras"
+# General
+PROJECT_NAME           = "Práctica final - Cifras y Letras"
 OUTPUT_DIRECTORY       = ./doc_doxygen/
-INPUT                  = ./include ./src ./doc
-GENERATE_LATEX         = YES
+USE_MDFILE_AS_MAINPAGE = ./doc/mainpage.dox
+INPUT                  = ./include ./src ./doc/mainpage.dox
 IMAGE_PATH             = ./doc
 EXTRACT_PRIVATE	       = NO
+
+# Latex
+GENERATE_LATEX         = YES
+
+# Página Doxygen de HTML
 GENERATE_HTML          = YES
-USE_MDFILE_AS_MAINPAGE = ./doc/mainpage.dox
+GENERATE_TREEVIEW      = YES
+GENERATE_TOC           = YES
+HTML_COLORSTYLE_HUE    = 200
+HTML_COLORSTYLE_SAT    = 255
+HTML_COLORSTYLE_GAMMA  = 255
+SEPARATE_MEMBER_PAGES  = NO

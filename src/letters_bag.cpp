@@ -6,6 +6,10 @@
 // -------------------------- Clase BolsaLetras -------------------------------
 BolsaLetras::BolsaLetras() {}
 
+BolsaLetras::BolsaLetras(const ConjuntoLetras & conjunto) {
+    cargarBolsa(conjunto);
+}
+
 int BolsaLetras::size() const{
     return bolsa_letras.size();
 }
