@@ -7,6 +7,15 @@ IMAGE_PATH             = ./doc
 EXTRACT_PRIVATE	       = NO
 
 # Latex
+#
+# La portada (./doc/portada.tex) se debe incluir manualmente si se quisiera. Los pasos serían:
+#	1. "doxygen Doxyfile.in" (desde la carpeta principal del proyecto. Esto creará una carpeta ./doc_doxygen/latex)
+#	2. "make" 				 (desde la carpeta ./doc_doxygen/latex)
+#	3. Para incluir la portada: 
+#		3.a) Editar "./doc_doxygen/latex/refman.tex", eliminando el bloque "{titlepage}", y sustituyéndolo por la siguiente línea de código:
+#			"\input{../../doc/portada.tex}"
+#		3.b) "pdflatex refman.tex" (desde la carpeta ./doc_doxygen/latex)
+#
 GENERATE_LATEX         = YES
 
 # Página Doxygen de HTML
@@ -18,7 +27,7 @@ HTML_COLORSTYLE_SAT    = 200
 HTML_COLORSTYLE_GAMMA  = 80
 SEPARATE_MEMBER_PAGES  = NO
 
-## Diagramas de las clases
+# Diagramas de las clases
 HAVE_DOT               = YES
 CLASS_DIAGRAMS         = YES
 UML_LOOK               = YES
