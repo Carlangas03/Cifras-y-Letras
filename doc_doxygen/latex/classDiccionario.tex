@@ -9,6 +9,15 @@ TDA \doxylink{classDiccionario}{Diccionario}.
 
 {\ttfamily \#include $<$dictionary.\+h$>$}
 
+
+
+Collaboration diagram for Diccionario\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classDiccionario__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,27 +26,27 @@ class \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDiccionario_aa0a2191ec706b256c35b5229cc197b15_aa0a2191ec706b256c35b5229cc197b15}{Diccionario}} ()
+\mbox{\hyperlink{classDiccionario_aa0a2191ec706b256c35b5229cc197b15}{Diccionario}} ()
 \begin{DoxyCompactList}\small\item\em Constructor sin parámetros. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classDiccionario_aeaed6fb147ff5d9f7b8ae47f61c2484e_aeaed6fb147ff5d9f7b8ae47f61c2484e}{Diccionario}} (string fichero\+\_\+diccionario)
+\mbox{\hyperlink{classDiccionario_aeaed6fb147ff5d9f7b8ae47f61c2484e}{Diccionario}} (string fichero\+\_\+diccionario)
 \begin{DoxyCompactList}\small\item\em Constructor con un parámetro. \end{DoxyCompactList}\item 
 \Hypertarget{classDiccionario_a74ea14ecba52288b84ffc6ea1f2fba99}\label{classDiccionario_a74ea14ecba52288b84ffc6ea1f2fba99} 
 int {\bfseries size} () const
 \begin{DoxyCompactList}\small\item\em Devuelve el número de palabras en el diccionario. \end{DoxyCompactList}\item 
-vector$<$ string $>$ \mbox{\hyperlink{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be_a6ec8594ebcc112eea474ae1ff86629be}{Palabras\+Longitud}} (int longitud)
+vector$<$ string $>$ \mbox{\hyperlink{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be}{Palabras\+Longitud}} (int longitud)
 \begin{DoxyCompactList}\small\item\em Obtiene todas las palabras en el diccionario de un longitud dada. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classDiccionario_a7bc0d2dd7334e4f23e92437caf23eae1_a7bc0d2dd7334e4f23e92437caf23eae1}{Esta}} (const string \&palabra) const
+bool \mbox{\hyperlink{classDiccionario_a7bc0d2dd7334e4f23e92437caf23eae1}{Esta}} (const string \&palabra) const
 \begin{DoxyCompactList}\small\item\em Indica si una palabra está en el diccionario o no. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \mbox{\hyperlink{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54_a60ad3a54e4a212d1c066cdbcd7235c54}{begin}} () const
+const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \mbox{\hyperlink{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54}{begin}} () const
 \begin{DoxyCompactList}\small\item\em Calcula la primera posición (dirección de la palabra correspondiente) del diccionario. \end{DoxyCompactList}\item 
-const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \mbox{\hyperlink{classDiccionario_a24f754b8c159402498d6b369a52efee9_a24f754b8c159402498d6b369a52efee9}{end}} () const
+const \mbox{\hyperlink{classDiccionario_1_1iterator}{iterator}} \mbox{\hyperlink{classDiccionario_a24f754b8c159402498d6b369a52efee9}{end}} () const
 \begin{DoxyCompactList}\small\item\em Calcula la última posición (dirección de la palabra correspondiente) del diccionario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-istream \& \mbox{\hyperlink{classDiccionario_a3d81648dba4e71402605458cc5d29988_a3d81648dba4e71402605458cc5d29988}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classDiccionario}{Diccionario}} \&D)
+istream \& \mbox{\hyperlink{classDiccionario_a3d81648dba4e71402605458cc5d29988}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classDiccionario}{Diccionario}} \&D)
 \begin{DoxyCompactList}\small\item\em Lee de un flujo de entrada un diccionario. \end{DoxyCompactList}\item 
-ostream \& \mbox{\hyperlink{classDiccionario_aec97923723e79e5c1d2550136424b75a_aec97923723e79e5c1d2550136424b75a}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classDiccionario}{Diccionario}} \&D)
+ostream \& \mbox{\hyperlink{classDiccionario_aec97923723e79e5c1d2550136424b75a}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classDiccionario}{Diccionario}} \&D)
 \begin{DoxyCompactList}\small\item\em Escribe en un flujo de salida el diccionario correspondiente al objeto implícito. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -47,7 +56,7 @@ TDA \doxylink{classDiccionario}{Diccionario}.
 Almacena las palabras de un fichero de texto y permite iterar sobre ellas 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classDiccionario_aa0a2191ec706b256c35b5229cc197b15_aa0a2191ec706b256c35b5229cc197b15}\label{classDiccionario_aa0a2191ec706b256c35b5229cc197b15_aa0a2191ec706b256c35b5229cc197b15} 
+\Hypertarget{classDiccionario_aa0a2191ec706b256c35b5229cc197b15}\label{classDiccionario_aa0a2191ec706b256c35b5229cc197b15} 
 \index{Diccionario@{Diccionario}!Diccionario@{Diccionario}}
 \index{Diccionario@{Diccionario}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{Diccionario()}{Diccionario()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -57,7 +66,7 @@ Almacena las palabras de un fichero de texto y permite iterar sobre ellas
 
 Constructor sin parámetros. 
 
-Construye un diccionario vacío. \Hypertarget{classDiccionario_aeaed6fb147ff5d9f7b8ae47f61c2484e_aeaed6fb147ff5d9f7b8ae47f61c2484e}\label{classDiccionario_aeaed6fb147ff5d9f7b8ae47f61c2484e_aeaed6fb147ff5d9f7b8ae47f61c2484e} 
+Construye un diccionario vacío. \Hypertarget{classDiccionario_aeaed6fb147ff5d9f7b8ae47f61c2484e}\label{classDiccionario_aeaed6fb147ff5d9f7b8ae47f61c2484e} 
 \index{Diccionario@{Diccionario}!Diccionario@{Diccionario}}
 \index{Diccionario@{Diccionario}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{Diccionario()}{Diccionario()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -81,7 +90,7 @@ Este constructor se basa en el operador \texorpdfstring{$>$}{>}\texorpdfstring{$
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54_a60ad3a54e4a212d1c066cdbcd7235c54}\label{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54_a60ad3a54e4a212d1c066cdbcd7235c54} 
+\Hypertarget{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54}\label{classDiccionario_a60ad3a54e4a212d1c066cdbcd7235c54} 
 \index{Diccionario@{Diccionario}!begin@{begin}}
 \index{begin@{begin}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{begin()}{begin()}}
@@ -94,7 +103,7 @@ Calcula la primera posición (dirección de la palabra correspondiente) del dicc
 \begin{DoxyReturn}{Returns}
 Un puntero a la primera palabra del diccionario. 
 \end{DoxyReturn}
-\Hypertarget{classDiccionario_a24f754b8c159402498d6b369a52efee9_a24f754b8c159402498d6b369a52efee9}\label{classDiccionario_a24f754b8c159402498d6b369a52efee9_a24f754b8c159402498d6b369a52efee9} 
+\Hypertarget{classDiccionario_a24f754b8c159402498d6b369a52efee9}\label{classDiccionario_a24f754b8c159402498d6b369a52efee9} 
 \index{Diccionario@{Diccionario}!end@{end}}
 \index{end@{end}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{end()}{end()}}
@@ -107,7 +116,7 @@ Calcula la última posición (dirección de la palabra correspondiente) del dicc
 \begin{DoxyReturn}{Returns}
 Un puntero a la última palabra del diccionario. 
 \end{DoxyReturn}
-\Hypertarget{classDiccionario_a7bc0d2dd7334e4f23e92437caf23eae1_a7bc0d2dd7334e4f23e92437caf23eae1}\label{classDiccionario_a7bc0d2dd7334e4f23e92437caf23eae1_a7bc0d2dd7334e4f23e92437caf23eae1} 
+\Hypertarget{classDiccionario_a7bc0d2dd7334e4f23e92437caf23eae1}\label{classDiccionario_a7bc0d2dd7334e4f23e92437caf23eae1} 
 \index{Diccionario@{Diccionario}!Esta@{Esta}}
 \index{Esta@{Esta}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{Esta()}{Esta()}}
@@ -137,7 +146,7 @@ true si la palabra está en el diccionario. False en caso contrario
 \end{DoxyCode}
  
 \end{DoxyReturn}
-\Hypertarget{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be_a6ec8594ebcc112eea474ae1ff86629be}\label{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be_a6ec8594ebcc112eea474ae1ff86629be} 
+\Hypertarget{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be}\label{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be} 
 \index{Diccionario@{Diccionario}!PalabrasLongitud@{PalabrasLongitud}}
 \index{PalabrasLongitud@{PalabrasLongitud}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{PalabrasLongitud()}{PalabrasLongitud()}}
@@ -165,10 +174,17 @@ Un vector con las palabras de longitud especifica en el parametro de entrada.
 \end{DoxyCode}
  
 \end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDiccionario_a6ec8594ebcc112eea474ae1ff86629be_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Friends And Related Symbol Documentation}
-\Hypertarget{classDiccionario_aec97923723e79e5c1d2550136424b75a_aec97923723e79e5c1d2550136424b75a}\label{classDiccionario_aec97923723e79e5c1d2550136424b75a_aec97923723e79e5c1d2550136424b75a} 
+\Hypertarget{classDiccionario_aec97923723e79e5c1d2550136424b75a}\label{classDiccionario_aec97923723e79e5c1d2550136424b75a} 
 \index{Diccionario@{Diccionario}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
@@ -188,7 +204,7 @@ Escribe en un flujo de salida el diccionario correspondiente al objeto implícit
 \begin{DoxyReturn}{Returns}
 el flujo de salida. 
 \end{DoxyReturn}
-\Hypertarget{classDiccionario_a3d81648dba4e71402605458cc5d29988_a3d81648dba4e71402605458cc5d29988}\label{classDiccionario_a3d81648dba4e71402605458cc5d29988_a3d81648dba4e71402605458cc5d29988} 
+\Hypertarget{classDiccionario_a3d81648dba4e71402605458cc5d29988}\label{classDiccionario_a3d81648dba4e71402605458cc5d29988} 
 \index{Diccionario@{Diccionario}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!Diccionario@{Diccionario}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}

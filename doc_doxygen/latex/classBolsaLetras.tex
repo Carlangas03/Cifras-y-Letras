@@ -9,29 +9,38 @@ TDA Letters\+Bag.
 
 {\ttfamily \#include $<$letters\+\_\+bag.\+h$>$}
 
+
+
+Collaboration diagram for Bolsa\+Letras\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classBolsaLetras__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classBolsaLetras_a2e269014b3a51359195e7b288a4b37c6_a2e269014b3a51359195e7b288a4b37c6}{Bolsa\+Letras}} ()
+\mbox{\hyperlink{classBolsaLetras_a2e269014b3a51359195e7b288a4b37c6}{Bolsa\+Letras}} ()
 \begin{DoxyCompactList}\small\item\em Constructor por defecto. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classBolsaLetras_abf7186f6df866c92f17a9dc8d714034e_abf7186f6df866c92f17a9dc8d714034e}{Bolsa\+Letras}} (const \mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&conjunto)
+\mbox{\hyperlink{classBolsaLetras_abf7186f6df866c92f17a9dc8d714034e}{Bolsa\+Letras}} (const \mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&conjunto)
 \begin{DoxyCompactList}\small\item\em Constructor con un parámetro. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classBolsaLetras_ae41ff82ebd41a65a5c53b11a5da3f0a8_ae41ff82ebd41a65a5c53b11a5da3f0a8}{size}} () const
+int \mbox{\hyperlink{classBolsaLetras_ae41ff82ebd41a65a5c53b11a5da3f0a8}{size}} () const
 \begin{DoxyCompactList}\small\item\em Calcula la cantidad total de elementos que hay en la bolsa. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classBolsaLetras_a370e29aaeac38197be9e32c5ff5dd484_a370e29aaeac38197be9e32c5ff5dd484}{add}} (\mbox{\hyperlink{classLetra}{Letra}} letra)
+void \mbox{\hyperlink{classBolsaLetras_a370e29aaeac38197be9e32c5ff5dd484}{add}} (\mbox{\hyperlink{classLetra}{Letra}} letra)
 \begin{DoxyCompactList}\small\item\em Método para añadir un elemento a la bolsa. \end{DoxyCompactList}\item 
-char \mbox{\hyperlink{classBolsaLetras_af5a1e65f848cad181f9de62671cad420_af5a1e65f848cad181f9de62671cad420}{get}} ()
+char \mbox{\hyperlink{classBolsaLetras_af5a1e65f848cad181f9de62671cad420}{get}} ()
 \begin{DoxyCompactList}\small\item\em Método para extraer un elemento aleatorio de la bolsa. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{classBolsaLetras_a6600b345694d57e5a79579d316f1ca9d_a6600b345694d57e5a79579d316f1ca9d}{to\+String}} () const
+string \mbox{\hyperlink{classBolsaLetras_a6600b345694d57e5a79579d316f1ca9d}{to\+String}} () const
 \begin{DoxyCompactList}\small\item\em Método para formatear como cadena la bolsa y obteniendo dicha cadena. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classBolsaLetras_a53861ea2d350c45b329c8381b2481498_a53861ea2d350c45b329c8381b2481498}{cargar\+Bolsa}} (const \mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&conj)
+void \mbox{\hyperlink{classBolsaLetras_a53861ea2d350c45b329c8381b2481498}{cargar\+Bolsa}} (const \mbox{\hyperlink{classConjuntoLetras}{Conjunto\+Letras}} \&conj)
 \begin{DoxyCompactList}\small\item\em Método para cargar una bolsa dado un conjunto de letras. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-ostream \& \mbox{\hyperlink{classBolsaLetras_a076e0e2062a277a217b9cf8d075a0020_a076e0e2062a277a217b9cf8d075a0020}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classBolsaLetras}{Bolsa\+Letras}} \&b)
+ostream \& \mbox{\hyperlink{classBolsaLetras_a076e0e2062a277a217b9cf8d075a0020}{operator$<$$<$}} (ostream \&os, const \mbox{\hyperlink{classBolsaLetras}{Bolsa\+Letras}} \&b)
 \begin{DoxyCompactList}\small\item\em Sobrecarga del operador \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. \end{DoxyCompactList}\item 
-istream \& \mbox{\hyperlink{classBolsaLetras_afd7f55b6e11540f14fd32c45405a14b8_afd7f55b6e11540f14fd32c45405a14b8}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classBolsaLetras}{Bolsa\+Letras}} \&b)
+istream \& \mbox{\hyperlink{classBolsaLetras_afd7f55b6e11540f14fd32c45405a14b8}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{classBolsaLetras}{Bolsa\+Letras}} \&b)
 \begin{DoxyCompactList}\small\item\em Permite la lectura de un objeto tipo \doxylink{classBolsaLetras}{Bolsa\+Letras} desde un flujo de entrada. Se usará para leer bolsas que vienen formateadas según la salida del programa \textquotesingle{}Conjunto\+\_\+letras\textquotesingle{}. Es decir\+: "{}\mbox{[}carácter\mbox{]} \mbox{[}cantidad\mbox{]} \mbox{[}puntuación\mbox{]}"{} por cada línea/letra. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -41,7 +50,7 @@ TDA Letters\+Bag.
 Este TDA almacena un conjunto de char utilizado en el juego de letras. La estructura de datos subyacente es una string. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classBolsaLetras_a2e269014b3a51359195e7b288a4b37c6_a2e269014b3a51359195e7b288a4b37c6}\label{classBolsaLetras_a2e269014b3a51359195e7b288a4b37c6_a2e269014b3a51359195e7b288a4b37c6} 
+\Hypertarget{classBolsaLetras_a2e269014b3a51359195e7b288a4b37c6}\label{classBolsaLetras_a2e269014b3a51359195e7b288a4b37c6} 
 \index{BolsaLetras@{BolsaLetras}!BolsaLetras@{BolsaLetras}}
 \index{BolsaLetras@{BolsaLetras}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{BolsaLetras()}{BolsaLetras()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -51,7 +60,7 @@ Este TDA almacena un conjunto de char utilizado en el juego de letras. La estruc
 
 Constructor por defecto. 
 
-Genera una bolsa vacía. \Hypertarget{classBolsaLetras_abf7186f6df866c92f17a9dc8d714034e_abf7186f6df866c92f17a9dc8d714034e}\label{classBolsaLetras_abf7186f6df866c92f17a9dc8d714034e_abf7186f6df866c92f17a9dc8d714034e} 
+Genera una bolsa vacía. \Hypertarget{classBolsaLetras_abf7186f6df866c92f17a9dc8d714034e}\label{classBolsaLetras_abf7186f6df866c92f17a9dc8d714034e} 
 \index{BolsaLetras@{BolsaLetras}!BolsaLetras@{BolsaLetras}}
 \index{BolsaLetras@{BolsaLetras}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{BolsaLetras()}{BolsaLetras()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -76,10 +85,17 @@ Genera una bolsa de letras de un conjunto de letras (TDA \doxylink{classConjunto
 \DoxyCodeLine{BoslaLetras(conjunto);}
 
 \end{DoxyCode}
- 
+ Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBolsaLetras_abf7186f6df866c92f17a9dc8d714034e_cgraph}
+\end{center}
+\end{figure}
+
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classBolsaLetras_a370e29aaeac38197be9e32c5ff5dd484_a370e29aaeac38197be9e32c5ff5dd484}\label{classBolsaLetras_a370e29aaeac38197be9e32c5ff5dd484_a370e29aaeac38197be9e32c5ff5dd484} 
+\Hypertarget{classBolsaLetras_a370e29aaeac38197be9e32c5ff5dd484}\label{classBolsaLetras_a370e29aaeac38197be9e32c5ff5dd484} 
 \index{BolsaLetras@{BolsaLetras}!add@{add}}
 \index{add@{add}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{add()}{add()}}
@@ -111,7 +127,14 @@ Este es el método que se encarga de introducir en la bolsa los caracteres tanta
 \DoxyCodeLine{cout\ <<\ bolsa\ <<\ endl;\ \textcolor{comment}{//\ <-\/-\/\ "{}aaa"{}}}
 
 \end{DoxyCode}
- \Hypertarget{classBolsaLetras_a53861ea2d350c45b329c8381b2481498_a53861ea2d350c45b329c8381b2481498}\label{classBolsaLetras_a53861ea2d350c45b329c8381b2481498_a53861ea2d350c45b329c8381b2481498} 
+ Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBolsaLetras_a370e29aaeac38197be9e32c5ff5dd484_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classBolsaLetras_a53861ea2d350c45b329c8381b2481498}\label{classBolsaLetras_a53861ea2d350c45b329c8381b2481498} 
 \index{BolsaLetras@{BolsaLetras}!cargarBolsa@{cargarBolsa}}
 \index{cargarBolsa@{cargarBolsa}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{cargarBolsa()}{cargarBolsa()}}
@@ -126,7 +149,14 @@ Genera la bolsa a partir de un conjunto de letras (TDA \doxylink{classConjuntoLe
 {\em conj} & Conjunto de letras a partir del cual se crea la bolsa \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classBolsaLetras_af5a1e65f848cad181f9de62671cad420_af5a1e65f848cad181f9de62671cad420}\label{classBolsaLetras_af5a1e65f848cad181f9de62671cad420_af5a1e65f848cad181f9de62671cad420} 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBolsaLetras_a53861ea2d350c45b329c8381b2481498_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classBolsaLetras_af5a1e65f848cad181f9de62671cad420}\label{classBolsaLetras_af5a1e65f848cad181f9de62671cad420} 
 \index{BolsaLetras@{BolsaLetras}!get@{get}}
 \index{get@{get}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
@@ -139,7 +169,7 @@ Método para extraer un elemento aleatorio de la bolsa.
 Al obtener el elemento, lo elimina de la bolsa. \begin{DoxyReturn}{Returns}
 Elemento aleatorio 
 \end{DoxyReturn}
-\Hypertarget{classBolsaLetras_ae41ff82ebd41a65a5c53b11a5da3f0a8_ae41ff82ebd41a65a5c53b11a5da3f0a8}\label{classBolsaLetras_ae41ff82ebd41a65a5c53b11a5da3f0a8_ae41ff82ebd41a65a5c53b11a5da3f0a8} 
+\Hypertarget{classBolsaLetras_ae41ff82ebd41a65a5c53b11a5da3f0a8}\label{classBolsaLetras_ae41ff82ebd41a65a5c53b11a5da3f0a8} 
 \index{BolsaLetras@{BolsaLetras}!size@{size}}
 \index{size@{size}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{size()}{size()}}
@@ -155,7 +185,7 @@ Tamaño de la bolsa.
 \begin{DoxyNote}{Note}
 Método de consulta. 
 \end{DoxyNote}
-\Hypertarget{classBolsaLetras_a6600b345694d57e5a79579d316f1ca9d_a6600b345694d57e5a79579d316f1ca9d}\label{classBolsaLetras_a6600b345694d57e5a79579d316f1ca9d_a6600b345694d57e5a79579d316f1ca9d} 
+\Hypertarget{classBolsaLetras_a6600b345694d57e5a79579d316f1ca9d}\label{classBolsaLetras_a6600b345694d57e5a79579d316f1ca9d} 
 \index{BolsaLetras@{BolsaLetras}!toString@{toString}}
 \index{toString@{toString}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{toString()}{toString()}}
@@ -171,10 +201,17 @@ Una cadena tipo std\+::string la bolsa formateada, de forma que por cada element
 \begin{DoxyNote}{Note}
 Método de consulta. 
 \end{DoxyNote}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBolsaLetras_a6600b345694d57e5a79579d316f1ca9d_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Friends And Related Symbol Documentation}
-\Hypertarget{classBolsaLetras_a076e0e2062a277a217b9cf8d075a0020_a076e0e2062a277a217b9cf8d075a0020}\label{classBolsaLetras_a076e0e2062a277a217b9cf8d075a0020_a076e0e2062a277a217b9cf8d075a0020} 
+\Hypertarget{classBolsaLetras_a076e0e2062a277a217b9cf8d075a0020}\label{classBolsaLetras_a076e0e2062a277a217b9cf8d075a0020} 
 \index{BolsaLetras@{BolsaLetras}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
@@ -194,7 +231,7 @@ Posibilita la salida formateada de la bolsa por un flujo, que por defecto es la 
 \begin{DoxyReturn}{Returns}
 Una referencia al flujo de salida. 
 \end{DoxyReturn}
-\Hypertarget{classBolsaLetras_afd7f55b6e11540f14fd32c45405a14b8_afd7f55b6e11540f14fd32c45405a14b8}\label{classBolsaLetras_afd7f55b6e11540f14fd32c45405a14b8_afd7f55b6e11540f14fd32c45405a14b8} 
+\Hypertarget{classBolsaLetras_afd7f55b6e11540f14fd32c45405a14b8}\label{classBolsaLetras_afd7f55b6e11540f14fd32c45405a14b8} 
 \index{BolsaLetras@{BolsaLetras}!operator$>$$>$@{operator$>$$>$}}
 \index{operator$>$$>$@{operator$>$$>$}!BolsaLetras@{BolsaLetras}}
 \doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}

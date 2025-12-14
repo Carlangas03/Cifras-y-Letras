@@ -1,0 +1,15 @@
+<map id="BolsaLetras::BolsaLetras" name="BolsaLetras::BolsaLetras">
+<area shape="rect" id="Node000001" title="Constructor con un parámetro." alt="" coords="5,79,220,104"/>
+<area shape="rect" id="Node000002" href="$classBolsaLetras.html#a53861ea2d350c45b329c8381b2481498" title="Método para cargar una bolsa dado un conjunto de letras." alt="" coords="268,79,483,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,89,254,89,254,94,220,94"/>
+<area shape="rect" id="Node000003" href="$classBolsaLetras.html#a370e29aaeac38197be9e32c5ff5dd484" title="Método para añadir un elemento a la bolsa." alt="" coords="551,29,701,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="440,76,547,55,548,60,441,81"/>
+<area shape="rect" id="Node000006" href="$classConjuntoLetras.html#af9c9876356b57b2a25a367d319e04e0f" title="Inicio del recorrido." alt="" coords="531,79,721,104"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="483,89,517,89,517,94,483,94"/>
+<area shape="rect" id="Node000007" href="$classConjuntoLetras.html#aadbee84222b25e8375ac2f711e2d944a" title="Final del recorrido." alt="" coords="539,128,713,153"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="441,101,548,123,547,128,440,107"/>
+<area shape="rect" id="Node000004" href="$classLetra.html#ad6ca984862129cf02cbca361d34095f3" title="Devuelve la cantidad asociada a una letra." alt="" coords="769,5,936,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="702,31,755,26,756,31,702,37"/>
+<area shape="rect" id="Node000005" href="$classLetra.html#af64f6b0f46cde3a70ef9a8e1afb4c1de" title="Devuelve el caracter asociado a una letra." alt="" coords="769,55,936,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="702,48,756,54,755,59,702,53"/>
+</map>

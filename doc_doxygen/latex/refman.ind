@@ -1,140 +1,144 @@
 \begin{theindex}
 
   \item {add}
-    \subitem {BolsaLetras}, \hyperpage{8}
+    \subitem {BolsaLetras}, \hyperpage{9}
 
   \indexspace
 
   \item {begin}
-    \subitem {ConjuntoLetras}, \hyperpage{11}
-    \subitem {Diccionario}, \hyperpage{15}
+    \subitem {ConjuntoLetras}, \hyperpage{13}
+    \subitem {Diccionario}, \hyperpage{18}
   \item {BolsaLetras}, \hyperpage{7}
-    \subitem {add}, \hyperpage{8}
+    \subitem {add}, \hyperpage{9}
     \subitem {BolsaLetras}, \hyperpage{8}
-    \subitem {cargarBolsa}, \hyperpage{8}
-    \subitem {get}, \hyperpage{8}
-    \subitem {operator$<$$<$}, \hyperpage{9}
-    \subitem {operator$>$$>$}, \hyperpage{9}
-    \subitem {size}, \hyperpage{8}
-    \subitem {toString}, \hyperpage{9}
+    \subitem {cargarBolsa}, \hyperpage{9}
+    \subitem {get}, \hyperpage{10}
+    \subitem {operator$<$$<$}, \hyperpage{11}
+    \subitem {operator$>$$>$}, \hyperpage{11}
+    \subitem {size}, \hyperpage{10}
+    \subitem {toString}, \hyperpage{10}
 
   \indexspace
 
   \item {cargarBolsa}
-    \subitem {BolsaLetras}, \hyperpage{8}
-  \item {ConjuntoLetras}, \hyperpage{10}
-    \subitem {begin}, \hyperpage{11}
-    \subitem {end}, \hyperpage{11}
-    \subitem {getLetra}, \hyperpage{12}
-    \subitem {insert}, \hyperpage{12}
-    \subitem {operator$<$$<$}, \hyperpage{12}
-    \subitem {operator$>$$>$}, \hyperpage{13}
-  \item {ConjuntoLetras::const\_iterator}, \hyperpage{13}
-  \item {ConjuntoLetras::iterator}, \hyperpage{16}
+    \subitem {BolsaLetras}, \hyperpage{9}
+  \item {ConjuntoLetras}, \hyperpage{12}
+    \subitem {begin}, \hyperpage{13}
+    \subitem {end}, \hyperpage{13, 14}
+    \subitem {getLetra}, \hyperpage{14}
+    \subitem {insert}, \hyperpage{14}
+    \subitem {operator$<$$<$}, \hyperpage{15}
+    \subitem {operator$>$$>$}, \hyperpage{15}
+  \item {ConjuntoLetras::const\_iterator}, \hyperpage{16}
+  \item {ConjuntoLetras::iterator}, \hyperpage{21}
 
   \indexspace
 
-  \item {Diccionario}, \hyperpage{14}
-    \subitem {begin}, \hyperpage{15}
-    \subitem {Diccionario::iterator}, \hyperpage{19}
-    \subitem {end}, \hyperpage{15}
-    \subitem {Esta}, \hyperpage{15}
-    \subitem {operator$<$$<$}, \hyperpage{16}
-    \subitem {operator$>$$>$}, \hyperpage{16}
-    \subitem {PalabrasLongitud}, \hyperpage{15}
-  \item {Diccionario::iterator}, \hyperpage{17}
-    \subitem {Diccionario}, \hyperpage{19}
-    \subitem {operator!=}, \hyperpage{18}
-    \subitem {operator++}, \hyperpage{18}
-    \subitem {operator==}, \hyperpage{18}
-    \subitem {operator\texorpdfstring{$\ast$}{*}}, \hyperpage{18}
+  \item {Diccionario}, \hyperpage{17}
+    \subitem {begin}, \hyperpage{18}
+    \subitem {Diccionario}, \hyperpage{18}
+    \subitem {Diccionario::iterator}, \hyperpage{25}
+    \subitem {end}, \hyperpage{19}
+    \subitem {Esta}, \hyperpage{19}
+    \subitem {operator$<$$<$}, \hyperpage{20}
+    \subitem {operator$>$$>$}, \hyperpage{20}
+    \subitem {PalabrasLongitud}, \hyperpage{19}
+  \item {Diccionario::iterator}, \hyperpage{22}
+    \subitem {Diccionario}, \hyperpage{25}
+    \subitem {operator!=}, \hyperpage{23}
+    \subitem {operator++}, \hyperpage{23}
+    \subitem {operator==}, \hyperpage{23}
+    \subitem {operator\texorpdfstring{$\ast$}{*}}, \hyperpage{23}
 
   \indexspace
 
   \item {end}
-    \subitem {ConjuntoLetras}, \hyperpage{11}
-    \subitem {Diccionario}, \hyperpage{15}
+    \subitem {ConjuntoLetras}, \hyperpage{13, 14}
+    \subitem {Diccionario}, \hyperpage{19}
   \item {Esta}
-    \subitem {Diccionario}, \hyperpage{15}
+    \subitem {Diccionario}, \hyperpage{19}
 
   \indexspace
 
   \item {get}
-    \subitem {BolsaLetras}, \hyperpage{8}
+    \subitem {BolsaLetras}, \hyperpage{10}
   \item {getCantidad}
-    \subitem {Letra}, \hyperpage{21}
+    \subitem {Letra}, \hyperpage{27}
   \item {getCaracter}
-    \subitem {Letra}, \hyperpage{21}
+    \subitem {Letra}, \hyperpage{27}
   \item {getLetra}
-    \subitem {ConjuntoLetras}, \hyperpage{12}
+    \subitem {ConjuntoLetras}, \hyperpage{14}
   \item {getPuntuacion}
-    \subitem {Letra}, \hyperpage{21}
+    \subitem {Letra}, \hyperpage{27}
 
   \indexspace
 
-  \item {include/dictionary.h}, \hyperpage{25}
-  \item {include/letters\_bag.h}, \hyperpage{26}
-  \item {include/letters\_set.h}, \hyperpage{26}
+  \item {include/dictionary.h}, \hyperpage{31}
+  \item {include/letters\_bag.h}, \hyperpage{32}
+  \item {include/letters\_set.h}, \hyperpage{32}
   \item {insert}
-    \subitem {ConjuntoLetras}, \hyperpage{12}
+    \subitem {ConjuntoLetras}, \hyperpage{14}
 
   \indexspace
 
-  \item {Letra}, \hyperpage{19}
-    \subitem {getCantidad}, \hyperpage{21}
-    \subitem {getCaracter}, \hyperpage{21}
-    \subitem {getPuntuacion}, \hyperpage{21}
-    \subitem {Letra}, \hyperpage{20, 21}
-    \subitem {operator$<$}, \hyperpage{21}
-    \subitem {operator$<$$<$}, \hyperpage{23}
-    \subitem {operator$>$$>$}, \hyperpage{23}
-    \subitem {setCantidad}, \hyperpage{22}
-    \subitem {setCaracter}, \hyperpage{22}
-    \subitem {setPuntuacion}, \hyperpage{22, 23}
+  \item {Letra}, \hyperpage{25}
+    \subitem {getCantidad}, \hyperpage{27}
+    \subitem {getCaracter}, \hyperpage{27}
+    \subitem {getPuntuacion}, \hyperpage{27}
+    \subitem {Letra}, \hyperpage{26, 27}
+    \subitem {operator$<$}, \hyperpage{27}
+    \subitem {operator$<$$<$}, \hyperpage{29}
+    \subitem {operator$>$$>$}, \hyperpage{29}
+    \subitem {setCantidad}, \hyperpage{28}
+    \subitem {setCaracter}, \hyperpage{28}
+    \subitem {setPuntuacion}, \hyperpage{28, 29}
+
+  \indexspace
+
+  \item {Mainpage}, \hyperpage{1}
 
   \indexspace
 
   \item {operator!=}
-    \subitem {Diccionario::iterator}, \hyperpage{18}
+    \subitem {Diccionario::iterator}, \hyperpage{23}
   \item {operator$<$}
-    \subitem {Letra}, \hyperpage{21}
+    \subitem {Letra}, \hyperpage{27}
   \item {operator$<$$<$}
-    \subitem {BolsaLetras}, \hyperpage{9}
-    \subitem {ConjuntoLetras}, \hyperpage{12}
-    \subitem {Diccionario}, \hyperpage{16}
-    \subitem {Letra}, \hyperpage{23}
+    \subitem {BolsaLetras}, \hyperpage{11}
+    \subitem {ConjuntoLetras}, \hyperpage{15}
+    \subitem {Diccionario}, \hyperpage{20}
+    \subitem {Letra}, \hyperpage{29}
   \item {operator$>$$>$}
-    \subitem {BolsaLetras}, \hyperpage{9}
-    \subitem {ConjuntoLetras}, \hyperpage{13}
-    \subitem {Diccionario}, \hyperpage{16}
-    \subitem {Letra}, \hyperpage{23}
+    \subitem {BolsaLetras}, \hyperpage{11}
+    \subitem {ConjuntoLetras}, \hyperpage{15}
+    \subitem {Diccionario}, \hyperpage{20}
+    \subitem {Letra}, \hyperpage{29}
   \item {operator++}
-    \subitem {Diccionario::iterator}, \hyperpage{18}
+    \subitem {Diccionario::iterator}, \hyperpage{23}
   \item {operator==}
-    \subitem {Diccionario::iterator}, \hyperpage{18}
+    \subitem {Diccionario::iterator}, \hyperpage{23}
   \item {operator\texorpdfstring{$\ast$}{*}}
-    \subitem {Diccionario::iterator}, \hyperpage{18}
+    \subitem {Diccionario::iterator}, \hyperpage{23}
 
   \indexspace
 
   \item {PalabrasLongitud}
-    \subitem {Diccionario}, \hyperpage{15}
-  \item {Prefacio}, \hyperpage{1}
+    \subitem {Diccionario}, \hyperpage{19}
 
   \indexspace
 
   \item {setCantidad}
-    \subitem {Letra}, \hyperpage{22}
+    \subitem {Letra}, \hyperpage{28}
   \item {setCaracter}
-    \subitem {Letra}, \hyperpage{22}
+    \subitem {Letra}, \hyperpage{28}
   \item {setPuntuacion}
-    \subitem {Letra}, \hyperpage{22, 23}
+    \subitem {Letra}, \hyperpage{28, 29}
   \item {size}
-    \subitem {BolsaLetras}, \hyperpage{8}
+    \subitem {BolsaLetras}, \hyperpage{10}
 
   \indexspace
 
   \item {toString}
-    \subitem {BolsaLetras}, \hyperpage{9}
+    \subitem {BolsaLetras}, \hyperpage{10}
 
 \end{theindex}

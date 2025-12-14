@@ -145,9 +145,9 @@ public:
         /**
          * * @brief Sobrecarga del operador ==.
          * @details Calcula si la palabra del diccionario a la que apunta el iterador implícito
-         * es igual a la que apunta el parámetro \par i.
-         * @param i
-         * @return true si ambas son iguales; false en caso contrario.
+         * es igual a la que apunta el parámetro i.
+         * @param i Dirección del elemento con que el iterador implícito se compara.
+         * @return True si ambas son iguales; false en caso contrario.
          */
         bool operator ==(const iterator &i);
 

@@ -1,0 +1,7 @@
+<map id="BolsaLetras::add" name="BolsaLetras::add">
+<area shape="rect" id="Node000001" title="Método para añadir un elemento a la bolsa." alt="" coords="5,31,156,56"/>
+<area shape="rect" id="Node000002" href="$classLetra.html#ad6ca984862129cf02cbca361d34095f3" title="Devuelve la cantidad asociada a una letra." alt="" coords="204,5,371,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,31,190,27,191,33,157,37"/>
+<area shape="rect" id="Node000003" href="$classLetra.html#af64f6b0f46cde3a70ef9a8e1afb4c1de" title="Devuelve el caracter asociado a una letra." alt="" coords="204,55,371,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,49,191,53,190,59,156,55"/>
+</map>

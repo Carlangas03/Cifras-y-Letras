@@ -1,0 +1,7 @@
+<map id="Diccionario::PalabrasLongitud" name="Diccionario::PalabrasLongitud">
+<area shape="rect" id="Node000001" title="Obtiene todas las palabras en el diccionario de un longitud dada." alt="" coords="5,31,260,56"/>
+<area shape="rect" id="Node000002" href="$classDiccionario.html#a60ad3a54e4a212d1c066cdbcd7235c54" title="Calcula la primera posición (dirección de la palabra correspondiente) del diccionario." alt="" coords="308,5,475,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,28,294,25,295,30,260,34"/>
+<area shape="rect" id="Node000003" href="$classDiccionario.html#a24f754b8c159402498d6b369a52efee9" title="Calcula la última posición (dirección de la palabra correspondiente) del diccionario." alt="" coords="316,55,467,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,53,303,56,302,62,260,58"/>
+</map>
